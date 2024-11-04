@@ -1,9 +1,6 @@
 using UnityEngine;
 
-public class HPSystem : MonoBehaviour, IDamageable<Stat, Stat>
+public class HPSystem : MonoBehaviour
 {
-    public void TakeDamage(Stat defencer, Stat attacker)
-    {
 
-    }
 }

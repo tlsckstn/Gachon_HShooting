@@ -6,10 +6,11 @@ public interface IMoveable
 }
 
 public interface IDamageable<THPStat, TDamageStat>
-    where THPStat : Stat
+    where THPStat : StatSO
     where TDamageStat : Stat
 {
-    public void TakeDamage(THPStat defencer, TDamageStat attacker);
+    THPStat Stat { get; }
+    public void TakeDamage(TDamageStat attacker);
 }
 
 public interface IName
