@@ -5,11 +5,11 @@ public interface IMoveable
 
 }
 
-public interface IDamageable<THPStat, TDamageStat>
-    where THPStat : StatSO
+public interface IDamageable<TStatSO, TDamageStat>
+    where TStatSO : StatSO
     where TDamageStat : Stat
 {
-    THPStat Stat { get; }
+    TStatSO StatData { get; }
     public void TakeDamage(TDamageStat attacker);
 }
 

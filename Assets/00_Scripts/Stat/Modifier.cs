@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// 버프같은 일시적인 증가, 혹은 아이템으로 얻는 공격력 증가 등에 사용 예정
+/// HP 회복의 경우 Modifier를 사용하지 않고 BaseValue를 변경
+/// </summary>
 [System.Serializable]
 public class Modifier : IEquatable<Modifier>, IName
 {

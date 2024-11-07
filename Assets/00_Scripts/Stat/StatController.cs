@@ -1,6 +1,24 @@
 using UnityEngine;
 
-public class StatController : MonoBehaviour
+public class StatController : MonoBehaviour, IDamageable<StatSO, Stat>
 {
-    [SerializeField] private StatSO stat;
+    [field: SerializeField] public StatSO StatData { get; }
+
+    private StatSO stat;
+
+    public void TakeDamage(Stat attacker)
+    {
+        stat.TakeDamage(attacker);
+    }
+
+    private void Awake()
+    {
+        if(StatData == null)
+        {
+            Debug.LogError("Don't have StatData: " + gameObject.name);
+            return;
+        }
+
+        stat = StatData.Clone() as StatSO;
+    }
 }

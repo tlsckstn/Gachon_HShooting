@@ -7,11 +7,16 @@ using UnityEngine;
 public class Stat : ICloneable
 {
     #region Events
-    public delegate void StatChangeHandler();
-    public event StatChangeHandler OnVaueChanged;
+    public delegate void StatValueChangeHandler();
+    public event StatValueChangeHandler OnVaueChanged;
     #endregion
 
     [SerializeField] private float baseValue;
+    [SerializeField] private float minValue;
+    [SerializeField] private float maxValue;
+
+    [Space]
+    [SerializeField] private bool isPercentType = false;
 
     public float BaseValue
     {
@@ -22,10 +27,14 @@ public class Stat : ICloneable
         set
         {
             baseValue = value;
-            CalculateModifierValue();
+            currentValue = Mathf.Clamp(CalculateModifierValue(), minValue, maxValue);
             OnVaueChanged?.Invoke();
         }
     }
+
+    public float MinValue => minValue;
+    public float MaxValue => maxValue;
+    public bool IsPercentType => isPercentType;
 
     private float currentValue;
 
@@ -35,7 +44,7 @@ public class Stat : ICloneable
         {
             if(isDirty)
             {
-                currentValue = CalculateModifierValue();
+                currentValue = Mathf.Clamp(CalculateModifierValue(), minValue, maxValue);
                 OnVaueChanged?.Invoke();
             }
 
@@ -46,9 +55,12 @@ public class Stat : ICloneable
     private Dictionary<ModifierType, List<Modifier>> modifierDict = new();
     private bool isDirty = false;
 
-    public Stat(float baseValue)
+    public Stat(Stat stat)
     {
-        this.baseValue = baseValue;
+        this.baseValue = stat.BaseValue;
+        this.minValue = stat.MinValue;
+        this.maxValue = stat.MaxValue;
+        this.isPercentType = stat.IsPercentType;
     }
 
     public void Setup()
@@ -60,7 +72,7 @@ public class Stat : ICloneable
 
     public object Clone()
     {
-        return new Stat(baseValue);
+        return new Stat(this);
     }
 
     public void AddModifier(Modifier modifier)
