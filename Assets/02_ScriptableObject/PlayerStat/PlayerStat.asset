@@ -23,7 +23,7 @@ MonoBehaviour:
     maxValue: 10
     isPercentType: 0
   speedStat:
-    baseValue: 7
+    baseValue: 10
     minValue: 0
     maxValue: 10
     isPercentType: 0
