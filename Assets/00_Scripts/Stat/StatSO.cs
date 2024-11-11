@@ -19,24 +19,33 @@ public class StatSO : ScriptableObject, ICloneable
     [SerializeField] private Stat damageStat;
     [SerializeField] private Stat speedStat;
 
-    public object Clone()
-    {
-        hpStat = hpStat.Clone() as Stat;
-        damageStat = damageStat.Clone() as Stat;
-        speedStat = speedStat.Clone() as Stat;
-
-        return Instantiate(this);
-    }
+    public object Clone() => Instantiate(this);
 
     public void Init()
     {
         hpStat.OnVaueChanged += () => OnHPStatChanged?.Invoke(hpStat);
         damageStat.OnVaueChanged += () => OnDamageStatChanged?.Invoke(damageStat);
         speedStat.OnVaueChanged += () => OnSpeedStatChanged?.Invoke(speedStat);
+
+        hpStat.Setup();
+        damageStat.Setup();
+        speedStat.Setup();
     }
 
     public void TakeDamage(Stat attacker)
     {
         hpStat.BaseValue -= attacker.Value;
     }
+
+    public void TakeDamage(float damage)
+    {
+        hpStat.BaseValue -= damage;
+    }
+
+    public float GetHp()
+    {
+        return hpStat.BaseValue;
+    }
+
+    public Stat DamageStat => damageStat;
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StatController : MonoBehaviour, IDamageable<StatSO, Stat>
 {
-    [field: SerializeField] public StatSO StatData { get; }
+    [SerializeField] private StatSO statData;
 
     private StatSO stat;
 
@@ -13,12 +13,13 @@ public class StatController : MonoBehaviour, IDamageable<StatSO, Stat>
 
     private void Awake()
     {
-        if(StatData == null)
+        if(statData == null)
         {
             Debug.LogError("Don't have StatData: " + gameObject.name);
             return;
         }
 
-        stat = StatData.Clone() as StatSO;
+        stat = statData.Clone() as StatSO;
+        stat.Init();
     }
 }

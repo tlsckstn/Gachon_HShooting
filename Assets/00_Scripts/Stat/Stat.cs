@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
-public class Stat : ICloneable
+public class Stat
 {
     #region Events
     public delegate void StatValueChangeHandler();
@@ -53,26 +53,13 @@ public class Stat : ICloneable
     }
 
     private Dictionary<ModifierType, List<Modifier>> modifierDict = new();
-    private bool isDirty = false;
-
-    public Stat(Stat stat)
-    {
-        this.baseValue = stat.BaseValue;
-        this.minValue = stat.MinValue;
-        this.maxValue = stat.MaxValue;
-        this.isPercentType = stat.IsPercentType;
-    }
+    private bool isDirty = true;
 
     public void Setup()
     {
         modifierDict = new();
         modifierDict.Add(ModifierType.Additive, new List<Modifier>());
         modifierDict.Add(ModifierType.Multiplicative, new List<Modifier>());
-    }
-
-    public object Clone()
-    {
-        return new Stat(this);
     }
 
     public void AddModifier(Modifier modifier)

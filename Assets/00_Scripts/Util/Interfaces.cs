@@ -9,7 +9,6 @@ public interface IDamageable<TStatSO, TDamageStat>
     where TStatSO : StatSO
     where TDamageStat : Stat
 {
-    TStatSO StatData { get; }
     public void TakeDamage(TDamageStat attacker);
 }
 

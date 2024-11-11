@@ -14,7 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpStat:
     baseValue: 10
+    minValue: 0
+    maxValue: 10
+    isPercentType: 0
   damageStat:
     baseValue: 5
+    minValue: 0
+    maxValue: 10
+    isPercentType: 0
   speedStat:
     baseValue: 3
+    minValue: 0
+    maxValue: 10
+    isPercentType: 0
