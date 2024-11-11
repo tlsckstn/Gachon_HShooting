@@ -7,6 +7,6 @@ public class PlayerAnimator : MonoBehaviour
 
     public void SetMoveParameters(float y)
     {
-        anim.SetFloat(k_yParameters, y);
+        //anim.SetFloat(k_yParameters, y);
     }
 }
