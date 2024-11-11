@@ -4,11 +4,11 @@ public class StatController : MonoBehaviour, IDamageable<StatSO, Stat>
 {
     [SerializeField] private StatSO statData;
 
-    private StatSO stat;
+    public StatSO Stat { get; private set; }
 
     public void TakeDamage(Stat attacker)
     {
-        stat.TakeDamage(attacker);
+        Stat.TakeDamage(attacker);
     }
 
     private void Awake()
@@ -19,7 +19,7 @@ public class StatController : MonoBehaviour, IDamageable<StatSO, Stat>
             return;
         }
 
-        stat = statData.Clone() as StatSO;
-        stat.Init();
+        Stat = statData.Clone() as StatSO;
+        Stat.Init();
     }
 }

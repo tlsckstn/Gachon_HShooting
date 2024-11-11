@@ -2,7 +2,7 @@ using UnityEngine;
 
 public interface IMoveable
 {
-
+    public void Move(Vector3 vec, float speed);
 }
 
 public interface IDamageable<TStatSO, TDamageStat>

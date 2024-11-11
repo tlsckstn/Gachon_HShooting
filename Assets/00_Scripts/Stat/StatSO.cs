@@ -19,6 +19,10 @@ public class StatSO : ScriptableObject, ICloneable
     [SerializeField] private Stat damageStat;
     [SerializeField] private Stat speedStat;
 
+    public Stat HPStat => hpStat;
+    public Stat DamageStat => damageStat;
+    public Stat SpeedStat => speedStat;
+
     public object Clone() => Instantiate(this);
 
     public void Init()
@@ -46,6 +50,4 @@ public class StatSO : ScriptableObject, ICloneable
     {
         return hpStat.BaseValue;
     }
-
-    public Stat DamageStat => damageStat;
 }

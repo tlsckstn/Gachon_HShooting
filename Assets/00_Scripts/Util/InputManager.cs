@@ -7,7 +7,7 @@ public class InputManager : Singleton<InputManager>
     public delegate void InputHandler(InputData data);
     public event InputHandler OnMovementInput;
 
-    private InputData data = new InputData();
+    private InputData data = new();
 
     private void Update()
     {
@@ -16,6 +16,8 @@ public class InputManager : Singleton<InputManager>
 
         if(!data.IsZeroInput())
         {
+            Debug.Log("AA");
+            data.inputDir.Normalize();
             OnMovementInput?.Invoke(data);
         }
     }
@@ -23,7 +25,7 @@ public class InputManager : Singleton<InputManager>
 
 public struct InputData
 {
-    public Vector2 inputDir;
+    public Vector3 inputDir;
 
     public bool IsZeroInput() 
         => Mathf.Approximately(inputDir.x, 0) && 
