@@ -14,8 +14,11 @@ public class InputManager : Singleton<InputManager>
         data.inputDir.x = Input.GetAxisRaw("Horizontal");
         data.inputDir.y = Input.GetAxisRaw("Vertical");
 
-        data.inputDir.Normalize();
-        OnMovementInput?.Invoke(data);
+        if(!data.IsZeroInput())
+        {
+            data.inputDir.Normalize();
+            OnMovementInput?.Invoke(data);
+        }
     }
 }
 
