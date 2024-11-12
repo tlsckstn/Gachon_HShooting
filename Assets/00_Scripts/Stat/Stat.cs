@@ -15,9 +15,6 @@ public class Stat
     [SerializeField] private float minValue;
     [SerializeField] private float maxValue;
 
-    [Space]
-    [SerializeField] private bool isPercentType = false;
-
     public float BaseValue
     {
         get
@@ -34,7 +31,6 @@ public class Stat
 
     public float MinValue => minValue;
     public float MaxValue => maxValue;
-    public bool IsPercentType => isPercentType;
 
     private float currentValue;
 
