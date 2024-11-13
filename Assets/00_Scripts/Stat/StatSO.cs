@@ -48,6 +48,6 @@ public class StatSO : ScriptableObject, ICloneable
 
     public float GetHp()
     {
-        return hpStat.BaseValue;
+        return hpStat.Value;
     }
 }

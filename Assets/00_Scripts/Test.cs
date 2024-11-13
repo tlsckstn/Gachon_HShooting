@@ -3,22 +3,24 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     [SerializeField] StatSO statSo;
+    [SerializeField] Modifier modi;
+    [SerializeField] Modifier modi2;
+    [SerializeField] Modifier modi3;
 
     private void Awake()
     {
         StatSO stat = statSo.Clone() as StatSO;
-        StatSO stat2 = statSo.Clone() as StatSO;
         stat.Init();
-        stat2.Init();
-        Debug.Log(statSo.GetHp());
         Debug.Log(stat.GetHp());
-        Debug.Log(stat2.GetHp());
 
         stat.TakeDamage(5f);
-        stat2.TakeDamage(1f);
 
-        Debug.Log(statSo.GetHp());
-        Debug.Log(stat.GetHp());
-        Debug.Log(stat2.GetHp());
+        Debug.Log(stat.DamageStat.Value);
+        stat.DamageStat.AddModifier(modi);
+        stat.DamageStat.AddModifier(modi);
+        stat.DamageStat.AddModifier(modi2);
+        stat.DamageStat.AddModifier(modi3);
+        Debug.Log(stat.DamageStat.Value);
+
     }
 }

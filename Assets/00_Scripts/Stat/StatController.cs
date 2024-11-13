@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StatController : MonoBehaviour, IDamageable<StatSO, Stat>
+public class StatController : MonoBehaviour, IDamageable<Stat>
 {
     [SerializeField] private StatSO statData;
 

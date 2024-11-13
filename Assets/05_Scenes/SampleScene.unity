@@ -356,7 +356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1416765545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +370,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statSo: {fileID: 11400000, guid: 9e257947832485d4b83e175ad4795d84, type: 2}
+  modi:
+    value: 3
+    type: 0
+    <Name>k__BackingField: HP
+  modi2:
+    value: 0.1
+    type: 1
+    <Name>k__BackingField: AA
+  modi3:
+    value: 2
+    type: 0
+    <Name>k__BackingField: AF
 --- !u!4 &1416765546
 Transform:
   m_ObjectHideFlags: 0
