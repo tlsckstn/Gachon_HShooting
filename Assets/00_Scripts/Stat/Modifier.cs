@@ -24,5 +24,5 @@ public class Modifier : IEquatable<Modifier>, IName
     public bool Equals(Modifier other) =>
         type == other.type &&
         Mathf.Approximately(value, other.value) &&
-        Name == other.Name;
+        Name.Equals(other.Name);
 }

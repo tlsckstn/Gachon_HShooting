@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000df33d0cd1f5d3482
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -409,6 +409,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 3934555973648854171, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934555973648854171, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934555973648854171, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2110497505
+      objectReference: {fileID: 0}
     - target: {fileID: 4020684586471059884, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -448,6 +460,22 @@ PrefabInstance:
     - target: {fileID: 4020684586471059884, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036544756653909367, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: proejectilePool
+      value: 
+      objectReference: {fileID: 11400000, guid: ec605dfc128824740a797dc547eb2a56, type: 2}
+    - target: {fileID: 4036544756653909367, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: projectileController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739642475319017999, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739642475319017999, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2110497505
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

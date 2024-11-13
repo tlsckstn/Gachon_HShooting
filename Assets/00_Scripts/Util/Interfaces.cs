@@ -15,7 +15,9 @@ public interface IName
     public string Name { get; set; }
 }
 
-public interface IDescription
+public interface IShootable
 {
-    public string Description { get; set; }
+    public float ShootDelay { get; set; }
+    public void Init();
+    public void Shoot();
 }

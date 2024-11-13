@@ -22,5 +22,10 @@ public class Test : MonoBehaviour
         stat.DamageStat.AddModifier(modi3);
         Debug.Log(stat.DamageStat.Value);
 
+        stat.DamageStat.RemoveModifier(modi);
+        Debug.Log(stat.DamageStat.Value);
+        stat.DamageStat.RemoveModifier(modi);
+        stat.DamageStat.AddModifier(modi);
+        Debug.Log(stat.DamageStat.Value);
     }
 }

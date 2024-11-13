@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private IMoveable movement;
+    private IShootable shooter;
+    private StatController statController;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        movement = GetComponent<IMoveable>();
+        shooter = GetComponent<IShootable>();
+        statController = GetComponent<StatController>();
     }
 }
