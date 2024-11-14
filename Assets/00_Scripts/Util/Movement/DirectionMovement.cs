@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class DirectionMovement : MonoBehaviour, IMoveable
+public class DirectionMovement : Movement
 {
-    public float Speed { get; set; }
-
-    public void Move(Vector3 vec)
+    public override void Move(Vector3 vec)
     {
-        transform.position += vec * Speed * Time.deltaTime;
+        transform.position += vec * speed * Time.deltaTime;
     }
 }

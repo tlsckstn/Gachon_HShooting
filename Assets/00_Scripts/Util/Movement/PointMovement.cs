@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class PointMovement : MonoBehaviour, IMoveable
+public class PointMovement : Movement
 {
-    public float Speed { get; set; }
-
-    public void Move(Vector3 vec)
+    public override void Move(Vector3 vec)
     {
 
     }

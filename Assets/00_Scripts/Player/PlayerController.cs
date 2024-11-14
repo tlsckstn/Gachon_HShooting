@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private IMoveable movement;
+    private Movement movement;
     private IShootable shooter;
     private StatController statController;
 
     private void Awake()
     {
-        movement = GetComponent<IMoveable>();
+        movement = GetComponent<Movement>();
         shooter = GetComponent<IShootable>();
         statController = GetComponent<StatController>();
 
-        movement.Speed = statController.Stat.SpeedStat.Value;
+        movement.SetSpeed(statController.Stat.SpeedStat.Value);
         shooter.Init();
 
         InputManager.Instance.OnMovementInput += InputManager_OnMovementInput;

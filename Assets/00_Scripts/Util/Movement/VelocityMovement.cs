@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class VelocityMovement : MonoBehaviour, IMoveable
+public class VelocityMovement : Movement
 {
-    [field: SerializeField] public float Speed { get; set; }
     [SerializeField] private Rigidbody2D rigid;
 
-    public void Move(Vector3 vec)
+    public override void Move(Vector3 vec)
     {
-        rigid.linearVelocity = vec * Speed;
+        rigid.linearVelocity = vec * speed;
     }
 }

@@ -2,12 +2,7 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    private IMoveable movement;
-
-    private void Awake()
-    {
-        movement = GetComponent<IMoveable>();
-    }
+    [SerializeField] private Movement movement;
 
     private void OnEnable()
     {

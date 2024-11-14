@@ -1,19 +1,15 @@
 using UnityEngine;
 
-public class PlayerShooter : MonoBehaviour, IShootable
+public class PlayerShooter : Shooter
 {
-    [field: SerializeField] public float ShootDelay { get; set; } = 0.2f;
-    [field: SerializeField] public Transform ShootTf { get; set; }
-    [SerializeField] private Pool proejectilePool;
-
-    public void Init()
+    public override void Init()
     {
         ObjectPool.Instance.RegisterPool(proejectilePool);
-        InputManager.Instance.SetShootDelay(ShootDelay);
+        InputManager.Instance.SetShootDelay(shootDelay);
     }
 
-    public void Shoot()
+    public override void Shoot()
     {
-        ObjectPool.Instance.GetObject(proejectilePool.PoolName, ShootTf.position);
+        ObjectPool.Instance.GetObject(proejectilePool.PoolName, shootTf.position);
     }
 }
