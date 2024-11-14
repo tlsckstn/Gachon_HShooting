@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4677720877009915667}
+  - {fileID: 4535650122314520141}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1980302629424907447
@@ -85,6 +86,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fdf0d023cc92045a37f5e9085d55bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ShootDelay>k__BackingField: 0.2
+  <ShootTf>k__BackingField: {fileID: 4535650122314520141}
+  proejectilePool: {fileID: 11400000, guid: ec605dfc128824740a797dc547eb2a56, type: 2}
 --- !u!1 &3952624377317591589
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,9 +163,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2110497505
+  m_SortingLayer: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 1271113504822893776, guid: 394b7cb384b4e2942b2e7da6a8c689b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -195,6 +199,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &6526728538306736594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4535650122314520141}
+  m_Layer: 0
+  m_Name: ShootTf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4535650122314520141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526728538306736594}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.78, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4020684586471059884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8723932047629103964
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,8 +303,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2110497505
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -5448727121883926364, guid: 9c3b46e4106592242920cec613708d7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

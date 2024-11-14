@@ -12,4 +12,9 @@ public class EnemyController : MonoBehaviour
         shooter = GetComponent<IShootable>();
         statController = GetComponent<StatController>();
     }
+
+    public void OnUpdate(float deltaTime)
+    {
+
+    }
 }

@@ -13,4 +13,9 @@ public class ProjectileController : MonoBehaviour
     {
         movement.Move(Vector3.right);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
 }
