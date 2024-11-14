@@ -6,9 +6,9 @@ public interface IMoveable
     public void SetSpeed(float speed);
 }
 
-public interface IDamageable<TDamageStat> where TDamageStat : Stat
+public interface IDamageable
 {
-    public void TakeDamage(TDamageStat attacker);
+    public void TakeDamage(float damage);
 }
 
 public interface IName

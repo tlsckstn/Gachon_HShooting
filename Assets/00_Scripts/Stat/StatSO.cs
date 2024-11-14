@@ -38,7 +38,7 @@ public class StatSO : ScriptableObject, ICloneable
 
     public void TakeDamage(Stat attacker)
     {
-        hpStat.BaseValue -= attacker.Value;
+        TakeDamage(attacker.Value);
     }
 
     public void TakeDamage(float damage)

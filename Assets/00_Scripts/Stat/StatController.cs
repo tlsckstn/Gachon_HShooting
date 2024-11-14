@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class StatController : MonoBehaviour, IDamageable<Stat>
+public class StatController : MonoBehaviour, IDamageable
 {
     [SerializeField] private StatSO statData;
 
     public StatSO Stat { get; private set; }
 
-    public void TakeDamage(Stat attacker)
+    public void TakeDamage(float damage)
     {
-        Stat.TakeDamage(attacker);
+        Stat.TakeDamage(damage);
     }
 
     private void Awake()
