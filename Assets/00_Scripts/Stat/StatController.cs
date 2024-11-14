@@ -11,7 +11,7 @@ public class StatController : MonoBehaviour, IDamageable
         Stat.TakeDamage(damage);
     }
 
-    private void Awake()
+    public void Init()
     {
         if(statData == null)
         {

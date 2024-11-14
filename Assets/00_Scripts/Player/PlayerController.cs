@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         shooter = GetComponent<Shooter>();
         statController = GetComponent<StatController>();
 
+        statController.Init();
         movement.SetSpeed(statController.Stat.SpeedStat.Value);
         shooter.Init();
 
