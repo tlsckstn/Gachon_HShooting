@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private float limitX;
+    [SerializeField] private float limitY;
+
     private Movement movement;
     private Shooter shooter;
     private StatController statController;
+
+    private Vector3 pos;
 
     private void Awake()
     {
@@ -24,11 +29,20 @@ public class PlayerController : MonoBehaviour
     private void InputManager_OnMovementInput(InputData data)
     {
         movement.Move(data.inputDir);
+        LimitPosition();
     }
 
     private void InputManager_OnShootInput(InputData data)
     {
         shooter.Shoot();
+    }
+
+    private void LimitPosition()
+    {
+        pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, -limitX, limitX);
+        pos.y = Mathf.Clamp(pos.y, -limitY, limitY);
+        transform.position = pos;
     }
 
     [ContextMenu("AA")]

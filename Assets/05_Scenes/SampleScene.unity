@@ -445,11 +445,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1783665286 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4535650122314520141, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
-  m_PrefabInstance: {fileID: 5498440753997395846}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5498440753997395846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -458,13 +453,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 477172028222123126, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1560358135555209040, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980302629424907447, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: limitX
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980302629424907447, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
+      propertyPath: limitY
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4020684586471059884, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -472,7 +471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4020684586471059884, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.64
       objectReference: {fileID: 0}
     - target: {fileID: 4020684586471059884, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -505,14 +504,6 @@ PrefabInstance:
     - target: {fileID: 4020684586471059884, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4036544756653909367, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
-      propertyPath: shootTf
-      value: 
-      objectReference: {fileID: 1783665286}
-    - target: {fileID: 4036544756653909367, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
-      propertyPath: shootDelay
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

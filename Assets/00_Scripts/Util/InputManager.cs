@@ -28,7 +28,7 @@ public class InputManager : Singleton<InputManager>
 
         if (!data.IsZeroInput())
         {
-            data.inputDir.Normalize();
+            //data.inputDir.Normalize();
             OnMovementInput?.Invoke(data);
         }
     }
