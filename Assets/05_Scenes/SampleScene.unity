@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPools:
-  - {fileID: 11400000, guid: 0d6c751f907a0744498dd038541e3fe5, type: 2}
-  spawnPosTest: {x: 8, y: -0.02, z: 0}
+  - {fileID: 11400000, guid: f74c23aef2d2a2b46b2df38dfedf44c3, type: 2}
+  spawnPosTest: {x: 10, y: -0.02, z: 0}
   spawnDelay: 3
 --- !u!4 &711254670
 Transform:
@@ -456,14 +456,6 @@ PrefabInstance:
     - target: {fileID: 1560358135555209040, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_Name
       value: Player1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1980302629424907447, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
-      propertyPath: limitX
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1980302629424907447, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
-      propertyPath: limitY
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4020684586471059884, guid: b8d0365a9b7fda8419205d1eca2716f6, type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,4 +11,13 @@ public static class Utilities
 
         return waitDict[key];
     }
+
+    private static Transform playerTf;
+    public static Vector3 GetPlayerPos()
+    {
+        if (playerTf == null)
+            playerTf = GameObject.FindAnyObjectByType<PlayerController>().transform;
+
+        return playerTf.position;
+    }
 }

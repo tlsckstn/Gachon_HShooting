@@ -1,23 +1,22 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public abstract class EnemyController : MonoBehaviour
 {
-    [SerializeField] private Movement movement;
-    [SerializeField] private Shooter shooter;
-    [SerializeField] private StatController statController;
+    [SerializeField] protected Movement movement;
+    [SerializeField] protected Shooter shooter;
+    [SerializeField] protected StatController statController;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         statController.Init();
     }
 
-    private void OnEnable()
+    public virtual void Init(Vector3 playerPos)
     {
         movement.SetSpeed(statController.Stat.SpeedStat.Value);
-        movement.Move(Vector3.left);
     }
 
-    public void OnUpdate(float deltaTime)
+    public virtual void OnUpdate(float deltaTime)
     {
     }
 }

@@ -40,6 +40,8 @@ public class EnemyManager : MonoBehaviour
     {
         Pool enemyPool = enemyPools[Random.Range(0, enemyPools.Count)];
         EnemyController enemy = ObjectPool.Instance.GetObject<EnemyController>(enemyPool.PoolName, spawnPosTest);
+        spawnPosTest += Vector3.left * 3;
+        enemy.Init(spawnPosTest);
         aliveEnemies.Add(enemy);
 
         spawnDelay = baseSpawnDelay;
