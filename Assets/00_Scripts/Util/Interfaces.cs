@@ -2,7 +2,8 @@ using UnityEngine;
 
 public interface IMoveable
 {
-    public void Move(Vector3 vec, float speed);
+    public float Speed { get; set; }
+    public void Move(Vector3 vec);
 }
 
 public interface IDamageable<TDamageStat> where TDamageStat : Stat
@@ -18,6 +19,7 @@ public interface IName
 public interface IShootable
 {
     public float ShootDelay { get; set; }
+    public Transform ShootTf { get; set; }
     public void Init();
     public void Shoot();
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerShooter : MonoBehaviour, IShootable
 {
     [field: SerializeField] public float ShootDelay { get; set; } = 0.2f;
+    [field: SerializeField] public Transform ShootTf { get; set; }
     [SerializeField] private Pool proejectilePool;
 
     public void Init()
@@ -13,6 +14,6 @@ public class PlayerShooter : MonoBehaviour, IShootable
 
     public void Shoot()
     {
-        ObjectPool.Instance.GetObject(proejectilePool.PoolName, transform.position);
+        ObjectPool.Instance.GetObject(proejectilePool.PoolName, ShootTf.position);
     }
 }

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
         shooter = GetComponent<IShootable>();
         statController = GetComponent<StatController>();
 
+        movement.Speed = statController.Stat.SpeedStat.Value;
         shooter.Init();
 
         InputManager.Instance.OnMovementInput += InputManager_OnMovementInput;
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void InputManager_OnMovementInput(InputData data)
     {
-        movement.Move(data.inputDir, statController.Stat.SpeedStat.Value);
+        movement.Move(data.inputDir);
     }
 
     private void InputManager_OnShootInput(InputData data)

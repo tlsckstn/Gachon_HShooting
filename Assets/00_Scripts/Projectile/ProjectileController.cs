@@ -9,8 +9,8 @@ public class ProjectileController : MonoBehaviour
         movement = GetComponent<IMoveable>();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        movement.Move(transform.right, 15f);
+        movement.Move(Vector3.right);
     }
 }
