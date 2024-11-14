@@ -4,13 +4,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Movement movement;
-    private IShootable shooter;
+    private Shooter shooter;
     private StatController statController;
 
     private void Awake()
     {
         movement = GetComponent<Movement>();
-        shooter = GetComponent<IShootable>();
+        shooter = GetComponent<Shooter>();
         statController = GetComponent<StatController>();
 
         movement.SetSpeed(statController.Stat.SpeedStat.Value);

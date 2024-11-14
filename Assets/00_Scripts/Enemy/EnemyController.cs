@@ -2,16 +2,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private Movement movement;
-    private IShootable shooter;
-    private StatController statController;
-
-    private void Awake()
-    {
-        movement = GetComponent<Movement>();
-        shooter = GetComponent<IShootable>();
-        statController = GetComponent<StatController>();
-    }
+    [SerializeField] private Movement movement;
+    [SerializeField] private Shooter shooter;
+    [SerializeField] private StatController statController;
 
     public void OnUpdate(float deltaTime)
     {
