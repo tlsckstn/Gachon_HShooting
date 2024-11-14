@@ -599,9 +599,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212e2a786121e6d43abddb6560b29f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.1
-  renderers:
-  - {fileID: 0}
+  speed: 5
+  limitX: 2.5
+  leftImage: {fileID: 1709823922}
+  rightImage: {fileID: 930493094}
 --- !u!1 &1416765544
 GameObject:
   m_ObjectHideFlags: 0

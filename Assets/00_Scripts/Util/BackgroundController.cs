@@ -2,24 +2,27 @@ using UnityEngine;
 
 public class BackgroundController : MonoBehaviour
 {
-    [SerializeField, Range(-1f, 1f)] private float moveSpeed = 0.1f;
-    [SerializeField] private Renderer[] renderers;
-    private Material[] materials;
+    [SerializeField] private float speed;
+    [SerializeField] private float limitX;
+    [SerializeField] private Transform leftImage;
+    [SerializeField] private Transform rightImage;
+
+    private Transform currentLeftImage;
+    private Transform currentRightImage;
 
     private void Awake()
     {
-        materials = new Material[renderers.Length];
-        for (int i = 0; i < materials.Length; i++)
-        {
-            materials[i] = renderers[i].material;
-        }
+        currentLeftImage = leftImage;
+        currentRightImage = rightImage;
     }
 
     private void Update()
     {
-        for (int i = 0; i < materials.Length; i++)
+        leftImage.position += Vector3.right * speed * Time.deltaTime;
+        rightImage.position += Vector3.right * speed * Time.deltaTime;
+        if(currentLeftImage.transform.position.x >= limitX) // 수정 필요
         {
-            materials[i].SetTextureOffset("_MainTex", Vector2.right * moveSpeed * Time.deltaTime);
+            currentRightImage.position -= Vector3.right * 15f;
         }
     }
 }
