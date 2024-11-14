@@ -24,6 +24,7 @@ public class Stat
         set
         {
             baseValue = value;
+            baseValue = Mathf.Clamp(baseValue, minValue, maxValue);
             currentValue = Mathf.Clamp(CalculateModifierValue(), minValue, maxValue);
             OnVaueChanged?.Invoke();
         }
@@ -115,4 +116,6 @@ public class Stat
     }
 
     private bool HasModfier(Modifier modifier) => modifierDict[modifier.Type].Contains(modifier);
+    public bool IsMinValue() => Mathf.Approximately(baseValue, minValue);
+    public bool IsMaxValue() => Mathf.Approximately(baseValue, maxValue);
 }

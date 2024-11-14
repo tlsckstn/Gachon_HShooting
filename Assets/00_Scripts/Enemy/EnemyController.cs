@@ -13,7 +13,7 @@ public abstract class EnemyController : MonoBehaviour
 
     public virtual void Init(Vector3 playerPos)
     {
-        movement.SetSpeed(statController.Stat.SpeedStat.Value);
+        movement.SetSpeed(statController.Stats.SpeedStat.Value);
     }
 
     public virtual void OnUpdate(float deltaTime)

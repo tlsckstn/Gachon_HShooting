@@ -4,11 +4,18 @@ public class StatController : MonoBehaviour, IDamageable
 {
     [SerializeField] private StatSO statData;
 
-    public StatSO Stat { get; private set; }
+    public StatSO Stats { get; private set; }
 
     public void TakeDamage(float damage)
     {
-        Stat.TakeDamage(damage);
+        Stats.TakeDamage(damage);
+        Debug.Log(Stats.HPStat.BaseValue);
+        Debug.Log(Stats.HPStat.MinValue);
+        Debug.Log(Stats.HPStat.IsMinValue());
+        if(Stats.HPStat.IsMinValue())
+        {
+            Die();
+        }
     }
 
     public void Init()
@@ -19,7 +26,20 @@ public class StatController : MonoBehaviour, IDamageable
             return;
         }
 
-        Stat = statData.Clone() as StatSO;
-        Stat.Init();
+        Stats = statData.Clone() as StatSO;
+        Stats.Init();
+    }
+
+    public void Die()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<IDamageable>(out IDamageable damageable))
+        {
+            damageable.TakeDamage(Stats.DamageStat.Value);
+        }
     }
 }
