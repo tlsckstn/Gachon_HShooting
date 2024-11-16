@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class EnemyController : MonoBehaviour
 {
     [SerializeField] protected Movement movement;
-    [SerializeField] protected Shooter shooter;
+    [SerializeField] protected EnemyShooter shooter;
     [SerializeField] protected StatController statController;
 
     public bool IsPointMovement() => movement is PointMovement;

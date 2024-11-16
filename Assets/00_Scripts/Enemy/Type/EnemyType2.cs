@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class EnemyType2 : EnemyController
 {
-    private bool isGoal;
-    private Vector3 targetPos;
-    private float shootDelay;
+    protected bool isGoal;
+    protected Vector3 targetPos;
+    protected float shootDelay;
 
     protected override void Awake()
     {

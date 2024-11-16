@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3218875650449777247}
   - component: {fileID: 3027991580564122490}
-  - component: {fileID: 4040076239636529870}
-  - component: {fileID: 2315482383538949942}
+  - component: {fileID: 4668666183558600630}
+  - component: {fileID: 5391040028366345461}
   - component: {fileID: 8948586571515156650}
   - component: {fileID: 1397136697472106703}
   m_Layer: 9
-  m_Name: EnemyType2Proejctile
+  m_Name: EnemyType3Proejctile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765f2826c6d7f604484347c165244282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 2315482383538949942}
---- !u!114 &4040076239636529870
+  movement: {fileID: 5391040028366345461}
+--- !u!114 &4668666183558600630
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,11 +59,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5061119645210365162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 774905c40ba1cb64680b8bb1e674064e, type: 3}
+  m_Script: {fileID: 11500000, guid: 461a2869a6c5f13418ff925afde8ed88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   additionalAngle: 180
---- !u!114 &2315482383538949942
+  rotateSpeed: 1080
+--- !u!114 &5391040028366345461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,13 +73,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5061119645210365162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b87f685e740d2148946510679b1aa5e, type: 3}
+  m_Script: {fileID: 11500000, guid: aa62189f9178d504db73e22de5e3555c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 5
   isRotate: 1
-  rotator: {fileID: 4040076239636529870}
-  rigid: {fileID: 1397136697472106703}
+  rotator: {fileID: 4668666183558600630}
 --- !u!61 &8948586571515156650
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.043955185, y: 0.0079904795}
+  m_Offset: {x: -0.09008688, y: 0.01803789}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -123,7 +123,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.47100776, y: 0.25083768}
+  m_Size: {x: 0.72376466, y: 0.24712977}
   m_EdgeRadius: 0
 --- !u!50 &1397136697472106703
 Rigidbody2D:
@@ -229,7 +229,7 @@ SpriteRenderer:
   m_SortingLayerID: -2110497505
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4250677989521320448, guid: 09cbd9ee11969d0499f07329754443d3, type: 3}
+  m_Sprite: {fileID: -1072295468644889672, guid: 65158d9aeab23cd4a94617ae1069e97d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,7 +250,7 @@ Animator:
   m_GameObject: {fileID: 7342250189083373656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cbb5548ed2f88a4419d3eccbc1689026, type: 2}
+  m_Controller: {fileID: 9100000, guid: e721b81a9db2aa84291f3afc0a1bf7db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
