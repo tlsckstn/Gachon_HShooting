@@ -47,7 +47,7 @@ public class ObjectPool : Singleton<ObjectPool>
         return go;
     }
 
-    public T GetObject<T>(string poolName, Vector3 position, Transform parent = null) where T : Component
+    public T GetObject<T>(string poolName, Vector3 position, Transform parent = null)
         => GetObject(poolName, position, parent).GetComponent<T>();
 
     public void ReturnObject(GameObject go)

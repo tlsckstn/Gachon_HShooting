@@ -5,12 +5,14 @@ public class EnemyType2 : EnemyController
 {
     private bool isGoal;
     private Vector3 targetPos;
+    private float shootDelay;
 
     protected override void Awake()
     {
         base.Awake();
 
         (movement as PointMovement).OnPointGoal += PointMovement_OnPointGoal;
+        shootDelay = shooter.ShootDelay;
     }
 
     public override void Init(Vector3 targetPos)
@@ -27,7 +29,13 @@ public class EnemyType2 : EnemyController
             return;
         }
 
-
+        shootDelay -= Time.deltaTime;
+        if(shootDelay <= 0f)
+        {
+            shooter.Shoot();
+            Debug.Log("A");
+            shootDelay = shooter.ShootDelay;
+        }
     }
 
     private void PointMovement_OnPointGoal()
