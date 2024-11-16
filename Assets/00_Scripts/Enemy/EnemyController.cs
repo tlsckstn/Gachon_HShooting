@@ -6,6 +6,10 @@ public abstract class EnemyController : MonoBehaviour
     [SerializeField] protected Shooter shooter;
     [SerializeField] protected StatController statController;
 
+    public bool IsPointMovement() => movement is PointMovement;
+    public bool IsDirectionMovement() => movement is DirectionMovement;
+    public bool IsVelocityMovement() => movement is VelocityMovement;
+
     protected virtual void Awake()
     {
         statController.Init();
@@ -18,5 +22,10 @@ public abstract class EnemyController : MonoBehaviour
 
     public virtual void OnUpdate(float deltaTime)
     {
+    }
+
+    public virtual void ReturnPool()
+    {
+        ObjectPool.Instance.ReturnObject(gameObject);
     }
 }

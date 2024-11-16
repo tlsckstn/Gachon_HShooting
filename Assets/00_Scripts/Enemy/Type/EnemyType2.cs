@@ -21,10 +21,13 @@ public class EnemyType2 : EnemyController
 
     public override void OnUpdate(float deltaTime)
     {
-        if (isGoal)
+        if (!isGoal)
+        {
+            movement.Move(targetPos);
             return;
+        }
 
-        movement.Move(targetPos);
+
     }
 
     private void PointMovement_OnPointGoal()

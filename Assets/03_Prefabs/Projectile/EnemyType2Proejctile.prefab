@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8948586571515156650}
   - component: {fileID: 1397136697472106703}
   m_Layer: 0
-  m_Name: PlayerProjectile
+  m_Name: EnemyType2Proejctile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b87f685e740d2148946510679b1aa5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
   rigid: {fileID: 1397136697472106703}
 --- !u!61 &8948586571515156650
 BoxCollider2D:
@@ -164,7 +164,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3218875650449777247}
@@ -213,7 +213,7 @@ SpriteRenderer:
   m_SortingLayerID: -2110497505
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2308969671833215485, guid: 1882795c93717b946a8f05a207359d8c, type: 3}
+  m_Sprite: {fileID: -4250677989521320448, guid: 09cbd9ee11969d0499f07329754443d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -234,7 +234,7 @@ Animator:
   m_GameObject: {fileID: 7342250189083373656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd201327481df8b4bbafdd06aeb96f6f, type: 2}
+  m_Controller: {fileID: 9100000, guid: cbb5548ed2f88a4419d3eccbc1689026, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

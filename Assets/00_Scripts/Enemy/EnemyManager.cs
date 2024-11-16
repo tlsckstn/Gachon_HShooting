@@ -2,22 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] private List<Pool> enemyPools = new();
+    [SerializeField] private List<Pool> enemyProjectilePools = new();
+
+    [Space]
     [SerializeField] private Vector3 spawnPosTest;
     [SerializeField] private float spawnDelay;
+    [SerializeField] private float enemyReturnPosX = -15f;
 
     private List<EnemyController> aliveEnemies = new();
     private float baseSpawnDelay;
 
-    private void Awake()
+    public float EnemyReturnPosX => enemyReturnPosX;
+
+    protected override void Awake()
     {
+        base.Awake();
+
         baseSpawnDelay = spawnDelay;
 
         for (int i = 0; i < enemyPools.Count; i++)
         {
             ObjectPool.Instance.RegisterPool(enemyPools[i]);    
+        }
+
+        for (int i = 0; i < enemyProjectilePools.Count; i++)
+        {
+            ObjectPool.Instance.RegisterPool(enemyProjectilePools[i]);
         }
     }
 
@@ -40,8 +53,12 @@ public class EnemyManager : MonoBehaviour
     {
         Pool enemyPool = enemyPools[Random.Range(0, enemyPools.Count)];
         EnemyController enemy = ObjectPool.Instance.GetObject<EnemyController>(enemyPool.PoolName, spawnPosTest);
-        spawnPosTest += Vector3.left * 3;
-        enemy.Init(spawnPosTest);
+
+        if (enemy.IsPointMovement())
+            enemy.Init(spawnPosTest + Vector3.left * 3f);
+        else
+            enemy.Init(spawnPosTest);
+
         aliveEnemies.Add(enemy);
 
         spawnDelay = baseSpawnDelay;

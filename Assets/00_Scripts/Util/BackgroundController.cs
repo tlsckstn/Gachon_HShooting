@@ -4,25 +4,26 @@ public class BackgroundController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float limitX;
+    [SerializeField] private float moveAmount;
     [SerializeField] private Transform leftImage;
     [SerializeField] private Transform rightImage;
 
-    private Transform currentLeftImage;
-    private Transform currentRightImage;
+    private Vector3 addPos = new();
 
-    private void Awake()
+    private Transform GetLeftTransform()
     {
-        currentLeftImage = leftImage;
-        currentRightImage = rightImage;
+        return leftImage.position.x > rightImage.position.x ? rightImage : leftImage;
     }
+
 
     private void Update()
     {
-        leftImage.position += Vector3.right * speed * Time.deltaTime;
-        rightImage.position += Vector3.right * speed * Time.deltaTime;
-        if(currentLeftImage.transform.position.x >= limitX) // 수정 필요
+        addPos = Vector3.left * speed * Time.deltaTime;
+        leftImage.position += addPos;
+        rightImage.position += addPos;
+        if(GetLeftTransform().position.x <= limitX)
         {
-            currentRightImage.position -= Vector3.right * 15f;
+            GetLeftTransform().position += Vector3.right * moveAmount;
         }
     }
 }
