@@ -63,4 +63,14 @@ public class EnemyManager : Singleton<EnemyManager>
 
         spawnDelay = baseSpawnDelay;
     }
+
+    private void SpawnBoss()
+    {
+        Pool enemyPool = enemyPools[Random.Range(0, enemyPools.Count)];
+        EnemyController enemy = ObjectPool.Instance.GetObject<EnemyController>(enemyPool.PoolName, spawnPosTest);
+
+        enemy.Init(spawnPosTest + Vector3.left * 5f);
+
+        aliveEnemies.Add(enemy);
+    }
 }
