@@ -54,9 +54,11 @@ public class Stat
 
     public void Setup()
     {
-        modifierDict = new();
-        modifierDict.Add(ModifierType.Additive, new List<Modifier>());
-        modifierDict.Add(ModifierType.Multiplicative, new List<Modifier>());
+        modifierDict = new()
+        {
+            { ModifierType.Additive, new List<Modifier>() },
+            { ModifierType.Multiplicative, new List<Modifier>() }
+        };
     }
 
     public void AddModifier(Modifier modifier)
@@ -99,6 +101,17 @@ public class Stat
         }
     }
 
+    public void RemoveAllModifiers()
+    {
+        modifierDict = new()
+        {
+            { ModifierType.Additive, new List<Modifier>() },
+            { ModifierType.Multiplicative, new List<Modifier>() }
+        };
+
+        isDirty = true;
+    }
+
     private float CalculateModifierValue()
     {
         float finalValue = baseValue;
@@ -115,7 +128,7 @@ public class Stat
         return finalValue;
     }
 
-    private bool HasModfier(Modifier modifier) => modifierDict[modifier.Type].Contains(modifier);
+    public bool HasModfier(Modifier modifier) => modifierDict[modifier.Type].Contains(modifier);
     public bool IsMinValue() => Mathf.Approximately(baseValue, minValue);
     public bool IsMaxValue() => Mathf.Approximately(baseValue, maxValue);
 }

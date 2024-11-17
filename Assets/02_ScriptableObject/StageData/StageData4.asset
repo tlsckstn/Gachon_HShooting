@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8876f2e13fbbe4ea7d1cdbcf76344c, type: 3}
   m_Name: StageData4
   m_EditorClassIdentifier: 
+  spawnCount: 20
   appliedStage: 30
-  additionalHp: 0
+  additionalHp: 60
   additionalDamage:
-    value: 0
+    value: 20
     type: 0
-    <Name>k__BackingField: Damage
+    <Name>k__BackingField: Stage30

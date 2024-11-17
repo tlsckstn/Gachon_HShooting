@@ -20,6 +20,12 @@ public class EnemyManager : Singleton<EnemyManager>
     private List<EnemyController> aliveEnemies = new();
     private Vector3 spawnPos;
 
+    private StageData currentStageData;
+    private int spawnCount;
+    private bool isReadyStage = false;
+
+    private bool IsStageClear => spawnCount <= 0 && aliveEnemies.Count == 0;
+
     protected override void Awake()
     {
         base.Awake();
@@ -37,8 +43,21 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    public void SetStageData(StageData data)
+    {
+        currentStageData = data;
+        Debug.Log(data.AppliedStage);
+        spawnCount = currentStageData.SpawnCount;
+        isReadyStage = true;
+    }
+
     private void Update()
     {
+        if (!isReadyStage)
+            return;
+
+        CheckForStage();
+
         float deltaTime = Time.deltaTime;
         for (int i = 0; i < aliveEnemies.Count; i++)
         {
@@ -50,6 +69,15 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             SpawnEnemy();
         }
+    }
+
+    private void CheckForStage()
+    {
+        if (!IsStageClear)
+            return;
+
+        isReadyStage = false;
+        StageManager.Instance.SetNextStage();
     }
 
     private void SpawnEnemy()
@@ -64,9 +92,12 @@ public class EnemyManager : Singleton<EnemyManager>
         else
             enemy.Init(spawnPos);
 
+        enemy.ReturnAllIncrease();
+        enemy.IncreaseStat(currentStageData.AdditionalHp, currentStageData.AdditionalDamage);
         aliveEnemies.Add(enemy);
 
         spawnDelay = Random.Range(minSpawnDelay, maxSpawnDelay);
+        spawnCount--;
     }
 
     public void ReturnEnemy(EnemyController enemy)

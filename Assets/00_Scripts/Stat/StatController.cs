@@ -12,7 +12,9 @@ public class StatController : MonoBehaviour, IDamageable
 
     public StatSO Stats { get; private set; }
 
-    public float GetHPValue() => Stats.HPStat.Value;
+    private float baseHp;
+
+    public float GetBaseHPValue() => Stats.HPStat.BaseValue;
     public float GetDamageValue() => Stats.DamageStat.Value;
     public float GetSpeedValue() => Stats.SpeedStat.Value;
 
@@ -38,19 +40,22 @@ public class StatController : MonoBehaviour, IDamageable
 
         Stats = statData.Clone() as StatSO;
         Stats.Init();
+        baseHp = GetBaseHPValue();
     }
 
-    public void AddModifier(Modifier modifier)
+    public void TryIncreaseStat(float hpAmount, Modifier modifier)
     {
-        Stats.HPStat.AddModifier(modifier);
+        if (Stats.DamageStat.HasModfier(modifier))
+            return;
+
+        Stats.DamageStat.AddModifier(modifier);
+        Stats.HPStat.BaseValue += hpAmount;
     }
 
-    public void AddModifiers(IReadOnlyList<Modifier> modifiers)
+    public void ReturnAllIncrease()
     {
-        for (int i = 0; i < modifiers.Count; i++)
-        {
-            AddModifier(modifiers[i]);
-        }
+        Stats.HPStat.BaseValue = baseHp;
+        Stats.DamageStat.RemoveAllModifiers();
     }
 
     public void Die()

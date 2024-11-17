@@ -56,6 +56,16 @@ public abstract class EnemyController : MonoBehaviour
 
         shootDelay = GetBaseShooter().ShootDelay;
     }
+
+    public void IncreaseStat(float hpAmount, Modifier modifier)
+    {
+        statController.TryIncreaseStat(hpAmount, modifier);
+    }
+
+    public void ReturnAllIncrease()
+    {
+        statController.ReturnAllIncrease();
+    }
 }
 
 [System.Serializable]

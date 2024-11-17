@@ -11,7 +11,6 @@ public class Test : MonoBehaviour
     {
         StatSO stat = statSo.Clone() as StatSO;
         stat.Init();
-        Debug.Log(stat.GetHp());
 
         stat.TakeDamage(5f);
 

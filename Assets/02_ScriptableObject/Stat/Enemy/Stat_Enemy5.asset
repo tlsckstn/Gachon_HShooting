@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Stat_Enemy5
   m_EditorClassIdentifier: 
   hpStat:
-    baseValue: 100
+    baseValue: 70
     minValue: 0
-    maxValue: 100
+    maxValue: 1000
   damageStat:
-    baseValue: 0
-    minValue: 15
-    maxValue: 100
+    baseValue: 10
+    minValue: 0
+    maxValue: 1000
   speedStat:
     baseValue: 4
     minValue: 0
-    maxValue: 15
+    maxValue: 1000
