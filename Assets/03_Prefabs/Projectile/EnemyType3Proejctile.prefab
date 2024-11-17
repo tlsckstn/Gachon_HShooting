@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   additionalAngle: 180
-  rotateSpeed: 1080
+  rotateSpeed: 2160
 --- !u!114 &5391040028366345461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa62189f9178d504db73e22de5e3555c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   isRotate: 1
   rotator: {fileID: 4668666183558600630}
 --- !u!61 &8948586571515156650

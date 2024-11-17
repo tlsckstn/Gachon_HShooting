@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273549531008250471}
-  - component: {fileID: 5538640218211674761}
+  - component: {fileID: 968569913743520375}
   m_Layer: 7
   m_Name: Shooter1
   m_TagString: Untagged
@@ -29,10 +29,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3572817635582672250}
   m_Father: {fileID: 4272740337289245118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5538640218211674761
+--- !u!114 &968569913743520375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +42,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 2911608093672357368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe690fdc34d17e742b71091ca32119ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 6dc336bec84a9c147ae03d1b59702225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 5
+  shootDelay: 0
   proejectilePool: {fileID: 0}
-  shootDatas: []
+--- !u!1 &4954019168619368877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3572817635582672250}
+  m_Layer: 7
+  m_Name: Shootf1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3572817635582672250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954019168619368877}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1273549531008250471}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5217414795404527516
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +88,6 @@ GameObject:
   m_Component:
   - component: {fileID: 413542142077800828}
   - component: {fileID: 7428845303770830369}
-  - component: {fileID: 8797639453259583416}
   - component: {fileID: 2474236700917533804}
   - component: {fileID: 1212040370025637693}
   - component: {fileID: 7782482484793118870}
@@ -99,25 +129,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 2474236700917533804}
-  shooter: {fileID: 0}
-  statController: {fileID: 1212040370025637693}
---- !u!114 &8797639453259583416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5217414795404527516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe690fdc34d17e742b71091ca32119ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootDelay: 0
-  proejectilePool: {fileID: 0}
   shootDatas:
-  - shooter: {fileID: 0}
-    shootTfs: []
+  - shooter: {fileID: 968569913743520375}
+    shootTfs:
+    - {fileID: 3572817635582672250}
+  statController: {fileID: 1212040370025637693}
 --- !u!114 &2474236700917533804
 MonoBehaviour:
   m_ObjectHideFlags: 0

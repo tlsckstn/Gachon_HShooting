@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnemyType5 : EnemyController
 {
-    protected float shootDelay;
     protected bool isGoal;
     protected Vector3 targetPos;
 
@@ -12,7 +11,6 @@ public class EnemyType5 : EnemyController
         base.Init(targetPos);
 
         this.targetPos = targetPos;
-        shootDelay = shooter.ShootDelay;
         (movement as PointMovement).OnPointGoal += PointMovement_OnPointGoal;
     }
 
@@ -27,8 +25,8 @@ public class EnemyType5 : EnemyController
         shootDelay -= deltaTime;
         if (shootDelay <= 0f)
         {
-            shooter.Shoot(Vector3.zero);
-            shootDelay = shooter.ShootDelay;
+            shootDatas[Random.Range(0, shootDatas.Count)].shooter.Shoot(Vector3.left);
+            ResetShootDelay();
         }
     }
 

@@ -5,7 +5,6 @@ public class EnemyType2 : EnemyController
 {
     protected bool isGoal;
     protected Vector3 targetPos;
-    protected float shootDelay;
 
     protected Transform shootTf;
 
@@ -22,7 +21,6 @@ public class EnemyType2 : EnemyController
 
         this.targetPos = targetPos;
         isGoal = false;
-        shootDelay = shooter.ShootDelay;
     }
 
     public override void OnUpdate(float deltaTime)
@@ -36,8 +34,8 @@ public class EnemyType2 : EnemyController
         shootDelay -= deltaTime;
         if(shootDelay <= 0f)
         {
-            shooter.Shoot((Utilities.GetPlayerPos() - shooter.ShootTfs[0].position).normalized);
-            shootDelay = shooter.ShootDelay;
+            GetBaseShooter().Shoot((Utilities.GetPlayerPos() - GetBaseShootTf().position).normalized);
+            ResetShootDelay();
         }
     }
 
