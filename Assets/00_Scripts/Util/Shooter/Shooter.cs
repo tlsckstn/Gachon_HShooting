@@ -5,10 +5,16 @@ public abstract class Shooter : MonoBehaviour, IShootable
 {
     [SerializeField] protected float shootDelay;
     [SerializeField] protected Pool proejectilePool;
+    
+    protected float damage;
 
     public float ShootDelay => shootDelay;
+    public float Damage => damage;
 
-    public abstract void Init();
+    public virtual void Init(float damage)
+    {
+        this.damage = damage;
+    }
 
     public abstract void Shoot(Vector3 vec);
 }

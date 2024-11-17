@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class EnemyShooter : MultiShooter
 {
-    private List<IMoveable> projectiles = new();
+    private List<ProjectileController> projectiles = new();
 
     public void SetShootTfs(IReadOnlyList<Transform> shootTfs)
     {
         ShootTfs = shootTfs;
     }
 
-    public override void Init()
+    public override void Init(float damage)
     {
-
+        base.Init(damage);
     }
 
     public override void Shoot(Vector3 dir)
     {
         for (int i = 0; i < ShootTfs.Count; i++)
         {
-            IMoveable movement = ObjectPool.Instance.GetObject<IMoveable>(proejectilePool.PoolName, ShootTfs[i].position);
-            movement.Move(dir);
+            ProjectileController projectile = ObjectPool.Instance.GetObject<ProjectileController>(proejectilePool.PoolName, ShootTfs[i].position);
+            projectile.Init(this);
+            projectile.Movement.Move(dir);
 
-            projectiles.Add(movement);
+            projectiles.Add(projectile);
         }
     }
 
@@ -31,7 +32,15 @@ public class EnemyShooter : MultiShooter
     {
         for (int i = 0; i < projectiles.Count; i++)
         {
-            projectiles[i].Move((Utilities.GetPlayerPos()));
+            projectiles[i].Movement.Move((Utilities.GetPlayerPos()));
+        }
+    }
+
+    private void OnDisable()
+    {
+        for (int i = 0; i < projectiles.Count; i++)
+        {
+            projectiles[i].ReturnPool();
         }
     }
 }

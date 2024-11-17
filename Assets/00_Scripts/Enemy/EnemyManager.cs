@@ -10,12 +10,9 @@ public class EnemyManager : Singleton<EnemyManager>
     [Space]
     [SerializeField] private Vector3 spawnPosTest;
     [SerializeField] private float spawnDelay;
-    [SerializeField] private float enemyReturnPosX = -15f;
 
     private List<EnemyController> aliveEnemies = new();
     private float baseSpawnDelay;
-
-    public float EnemyReturnPosX => enemyReturnPosX;
 
     protected override void Awake()
     {

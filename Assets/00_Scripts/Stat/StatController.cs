@@ -12,6 +12,10 @@ public class StatController : MonoBehaviour, IDamageable
 
     public StatSO Stats { get; private set; }
 
+    public float GetHPValue() => Stats.HPStat.Value;
+    public float GetDamageValue() => Stats.DamageStat.Value;
+    public float GetSpeedValue() => Stats.SpeedStat.Value;
+
     public void TakeDamage(float damage)
     {
         Stats.TakeDamage(damage);

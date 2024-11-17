@@ -23,13 +23,14 @@ public abstract class EnemyController : MonoBehaviour
 
         for (int i = 0; i < shootDatas.Count; i++)
         {
+            shootDatas[i].shooter.Init(statController.GetDamageValue());
             shootDatas[i].shooter.SetShootTfs(shootDatas[i].shootTfs);
         }
     }
 
     public virtual void Init(Vector3 playerPos)
     {
-        movement.SetSpeed(statController.Stats.SpeedStat.Value);
+        movement.SetSpeed(statController.GetSpeedValue());
         ResetShootDelay();
     }
 

@@ -17,7 +17,7 @@ MonoBehaviour:
     minValue: 0
     maxValue: 10
   damageStat:
-    baseValue: 5
+    baseValue: 100
     minValue: 0
     maxValue: 100
   speedStat:

@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
         statController = GetComponent<StatController>();
 
         statController.Init();
-        movement.SetSpeed(statController.Stats.SpeedStat.Value);
-        shooter.Init();
+        movement.SetSpeed(statController.GetSpeedValue());
+        shooter.Init(statController.GetDamageValue());
 
         InputManager.Instance.OnMovementInput += InputManager_OnMovementInput;
         InputManager.Instance.OnShootInput += InputManager_OnShootInput;

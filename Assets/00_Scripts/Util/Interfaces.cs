@@ -19,7 +19,7 @@ public interface IName
 
 public interface IShootable
 {
-    public void Init();
+    public void Init(float damage);
     public void Shoot(Vector3 vec);
 }
 

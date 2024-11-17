@@ -12,11 +12,11 @@ public class EnemyType1 : EnemyController
         movement.Move(Vector3.left);
     }
 
-    public override void OnUpdate(float deltaTime)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnUpdate(deltaTime);
-
-        if (transform.position.x <= EnemyManager.Instance.EnemyReturnPosX)
+        if(collision.CompareTag("Wall"))
+        {
             transform.position = respawnPos;
+        }
     }
 }
