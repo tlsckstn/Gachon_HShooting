@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooter : Shooter
+public class EnemyShooter : MultiShooter
 {
     private List<IMoveable> projectiles = new();
 
@@ -10,12 +10,15 @@ public class EnemyShooter : Shooter
         
     }
 
-    public override void Shoot()
+    public override void Shoot(Vector3 dir)
     {
-        IMoveable movement = ObjectPool.Instance.GetObject<IMoveable>(proejectilePool.PoolName, shootTf.position);
-        movement.Move((Utilities.GetPlayerPos() - shootTf.position).normalized);
+        for (int i = 0; i < shootTfs.Count; i++)
+        {
+            IMoveable movement = ObjectPool.Instance.GetObject<IMoveable>(proejectilePool.PoolName, shootTfs[i].position);
+            movement.Move(dir);
 
-        projectiles.Add(movement);
+            projectiles.Add(movement);
+        }
     }
 
     public void MoveProjectiles()

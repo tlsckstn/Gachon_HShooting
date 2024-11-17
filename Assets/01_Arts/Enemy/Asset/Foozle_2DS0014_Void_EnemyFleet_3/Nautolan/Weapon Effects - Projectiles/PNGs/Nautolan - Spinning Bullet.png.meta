@@ -49,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -130,7 +130,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -138,10 +138,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 492d80b9f1add1f90800000000000000
-      internalID: -6981184018074512748
+      spriteID: c0a1e5185c73a814fa907b8b4b28cba2
+      internalID: 966143254
       vertices: []
       indices: 
       edges: []
@@ -150,9 +150,9 @@ TextureImporter:
       name: Nautolan - Spinning Bullet_1
       rect:
         serializedVersion: 2
-        x: 15
+        x: 8
         y: 0
-        width: 10
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b4bd353f77774de10800000000000000
-      internalID: 2221531873267669835
+      spriteID: 60555e16406440746a8427e08843b6fe
+      internalID: 1483312540
       vertices: []
       indices: 
       edges: []
@@ -172,9 +172,9 @@ TextureImporter:
       name: Nautolan - Spinning Bullet_2
       rect:
         serializedVersion: 2
-        x: 23
+        x: 16
         y: 0
-        width: 26
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1bb95be1facf2d500800000000000000
-      internalID: 419675544363572145
+      spriteID: 87bf7aa3879ca7840b63e19e9331797e
+      internalID: -943581911
       vertices: []
       indices: 
       edges: []
@@ -194,9 +194,9 @@ TextureImporter:
       name: Nautolan - Spinning Bullet_3
       rect:
         serializedVersion: 2
-        x: 47
+        x: 24
         y: 0
-        width: 10
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ccdb274b45bf942f0800000000000000
-      internalID: -987982302007870004
+      spriteID: 4eaa1b9e28af4b04996bbcf90aef98df
+      internalID: -1550290693
       vertices: []
       indices: 
       edges: []
@@ -216,9 +216,9 @@ TextureImporter:
       name: Nautolan - Spinning Bullet_4
       rect:
         serializedVersion: 2
-        x: 55
+        x: 32
         y: 0
-        width: 9
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,10 +226,76 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7f88d5d62f02b1760800000000000000
-      internalID: 7429568235866786039
+      spriteID: f0b4cf2798a0e6d459cc921c38038694
+      internalID: 1364181736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan - Spinning Bullet_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad4652b0ccad434eb2c46d808455d2a
+      internalID: -1895411593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan - Spinning Bullet_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3e3877266503548b51d0fed8ab70e8
+      internalID: -2022967124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nautolan - Spinning Bullet_7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0cfed034d41d645977b1ff245ea3e1
+      internalID: -684381807
       vertices: []
       indices: 
       edges: []
@@ -238,7 +304,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6f0a494f54866ee4e96f102faa681b64
     internalID: 0
     vertices: []
     indices: 
@@ -247,7 +313,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nautolan - Spinning Bullet_0: 966143254
+      Nautolan - Spinning Bullet_1: 1483312540
+      Nautolan - Spinning Bullet_2: -943581911
+      Nautolan - Spinning Bullet_3: -1550290693
+      Nautolan - Spinning Bullet_4: 1364181736
+      Nautolan - Spinning Bullet_5: -1895411593
+      Nautolan - Spinning Bullet_6: -2022967124
+      Nautolan - Spinning Bullet_7: -684381807
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

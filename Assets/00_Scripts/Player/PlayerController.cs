@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void InputManager_OnShootInput(InputData data)
     {
-        shooter.Shoot();
+        shooter.Shoot(Vector3.right);
     }
 
     private void LimitPosition()

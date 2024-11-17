@@ -20,5 +20,10 @@ public interface IName
 public interface IShootable
 {
     public void Init();
-    public void Shoot();
+    public void Shoot(Vector3 vec);
+}
+
+public interface IRotateable
+{
+    public void Rotate(Vector3 vec);
 }

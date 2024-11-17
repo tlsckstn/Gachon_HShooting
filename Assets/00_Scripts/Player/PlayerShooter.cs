@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerShooter : Shooter
+public class PlayerShooter : SoloShooter
 {
     public override void Init()
     {
@@ -8,8 +8,9 @@ public class PlayerShooter : Shooter
         InputManager.Instance.SetShootDelay(shootDelay);
     }
 
-    public override void Shoot()
+    public override void Shoot(Vector3 dir)
     {
-        ObjectPool.Instance.GetObject(proejectilePool.PoolName, shootTf.position);
+        IMoveable movement = ObjectPool.Instance.GetObject<IMoveable>(proejectilePool.PoolName, shootTf.position);
+        movement.Move(dir);
     }
 }

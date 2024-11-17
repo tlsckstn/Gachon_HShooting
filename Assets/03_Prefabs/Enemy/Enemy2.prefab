@@ -67,8 +67,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 3
-  shootTf: {fileID: 7772100021788763777}
   proejectilePool: {fileID: 11400000, guid: 4a6a57812bb946249a9fe3ff53760331, type: 2}
+  shootTfs:
+  - {fileID: 7772100021788763777}
 --- !u!114 &2474236700917533804
 MonoBehaviour:
   m_ObjectHideFlags: 0

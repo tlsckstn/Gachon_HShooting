@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Rotator : MonoBehaviour
+public abstract class Rotator : MonoBehaviour, IRotateable
 {
     [SerializeField] protected float additionalAngle;
 
