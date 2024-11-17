@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyShooter : MultiShooter
 {
-    private List<ProjectileController> projectiles = new();
+    protected List<ProjectileController> projectiles = new();
 
     public void SetShootTfs(IReadOnlyList<Transform> shootTfs)
     {

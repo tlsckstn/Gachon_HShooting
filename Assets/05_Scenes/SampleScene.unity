@@ -370,9 +370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPools:
-  - {fileID: 11400000, guid: 56701281a5b6c7d4d874573856900233, type: 2}
+  - {fileID: 11400000, guid: 90129bc49e3c8dc42b15430bd79a0498, type: 2}
   enemyProjectilePools:
-  - {fileID: 11400000, guid: d11fa287e2b94364e8b70d3645765f6e, type: 2}
+  - {fileID: 11400000, guid: 4e423fef1f830a34da3461c9f6b8401d, type: 2}
   spawnPosTest: {x: 10, y: -0.02, z: 0}
   spawnDelay: 3
 --- !u!4 &711254670

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273549531008250471}
-  - component: {fileID: 968569913743520375}
+  - component: {fileID: 5141959427697429808}
   m_Layer: 7
   m_Name: Shooter1
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 3572817635582672250}
   m_Father: {fileID: 4272740337289245118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &968569913743520375
+--- !u!114 &5141959427697429808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,11 +42,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2911608093672357368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dc336bec84a9c147ae03d1b59702225, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b5cef422a6e2a44a0d71598cae3c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 0
-  proejectilePool: {fileID: 0}
+  shootDelay: 3
+  proejectilePool: {fileID: 11400000, guid: 4e423fef1f830a34da3461c9f6b8401d, type: 2}
+  shootCount: 5
 --- !u!1 &4954019168619368877
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 4954019168619368877}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.32, y: 0, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 2474236700917533804}
   shootDatas:
-  - shooter: {fileID: 968569913743520375}
+  - shooter: {fileID: 5141959427697429808}
     shootTfs:
     - {fileID: 3572817635582672250}
   statController: {fileID: 1212040370025637693}
@@ -262,7 +263,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 413542142077800828}
