@@ -13,6 +13,7 @@ public abstract class EnemyController : MonoBehaviour
     protected virtual void Awake()
     {
         statController.Init();
+        statController.OnUnitDied += ReturnPool;
     }
 
     public virtual void Init(Vector3 playerPos)
@@ -22,6 +23,11 @@ public abstract class EnemyController : MonoBehaviour
 
     public virtual void OnUpdate(float deltaTime)
     {
+    }
+
+    public virtual void StatController_OnUnitDied()
+    {
+        ReturnPool();
     }
 
     public virtual void ReturnPool()

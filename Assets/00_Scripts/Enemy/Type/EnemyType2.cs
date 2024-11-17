@@ -19,7 +19,9 @@ public class EnemyType2 : EnemyController
     public override void Init(Vector3 targetPos)
     {
         base.Init(targetPos);
+
         this.targetPos = targetPos;
+        isGoal = false;
         shootDelay = shooter.ShootDelay;
     }
 
@@ -31,11 +33,10 @@ public class EnemyType2 : EnemyController
             return;
         }
 
-        shootDelay -= Time.deltaTime;
+        shootDelay -= deltaTime;
         if(shootDelay <= 0f)
         {
             shooter.Shoot((Utilities.GetPlayerPos() - shooter.ShootTfs[0].position).normalized);
-            Debug.Log("A");
             shootDelay = shooter.ShootDelay;
         }
     }

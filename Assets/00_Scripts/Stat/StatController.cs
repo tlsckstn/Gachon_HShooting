@@ -1,7 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StatController : MonoBehaviour, IDamageable
 {
+    #region
+    public delegate void UnitDieHandler();
+    public event UnitDieHandler OnUnitDied;
+    #endregion
+
     [SerializeField] private StatSO statData;
 
     public StatSO Stats { get; private set; }
@@ -30,8 +36,22 @@ public class StatController : MonoBehaviour, IDamageable
         Stats.Init();
     }
 
+    public void AddModifier(Modifier modifier)
+    {
+        Stats.HPStat.AddModifier(modifier);
+    }
+
+    public void AddModifiers(IReadOnlyList<Modifier> modifiers)
+    {
+        for (int i = 0; i < modifiers.Count; i++)
+        {
+            AddModifier(modifiers[i]);
+        }
+    }
+
     public void Die()
     {
+        OnUnitDied?.Invoke();
         gameObject.SetActive(false);
     }
 

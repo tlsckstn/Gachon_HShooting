@@ -15,7 +15,7 @@ public class EnemyType4 : EnemyType1
     {
         base.OnUpdate(deltaTime);
 
-        shootDelay -= Time.deltaTime;
+        shootDelay -= deltaTime;
         if (shootDelay <= 0f)
         {
             shooter.Shoot(Vector3.left);
