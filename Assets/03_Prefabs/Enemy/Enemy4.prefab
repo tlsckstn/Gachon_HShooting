@@ -84,7 +84,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 3994846211672949101}
-  shooter: {fileID: 5572906109185058209}
+  shootDatas:
+  - shooter: {fileID: 5572906109185058209}
+    shootTfs:
+    - {fileID: 2718814304711096129}
+    - {fileID: 688760865459593712}
   statController: {fileID: 7796198256932888093}
 --- !u!114 &5572906109185058209
 MonoBehaviour:
@@ -100,9 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootDelay: 3
   proejectilePool: {fileID: 11400000, guid: f43d2c80cd952a14e9f774cda57f9833, type: 2}
-  shootTfs:
-  - {fileID: 2718814304711096129}
-  - {fileID: 688760865459593712}
 --- !u!114 &3994846211672949101
 MonoBehaviour:
   m_ObjectHideFlags: 0

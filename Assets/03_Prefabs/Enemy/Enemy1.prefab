@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 3994846211672949101}
-  shooter: {fileID: 0}
+  shootDatas: []
   statController: {fileID: 7796198256932888093}
 --- !u!114 &3994846211672949101
 MonoBehaviour:

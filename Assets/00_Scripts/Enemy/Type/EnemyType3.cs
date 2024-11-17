@@ -7,6 +7,6 @@ public class EnemyType3 : EnemyType2
     {
         base.OnUpdate(deltaTime);
 
-        shooter.MoveProjectiles();
+        shootDatas[0].shooter.MoveProjectiles();
     }
 }
