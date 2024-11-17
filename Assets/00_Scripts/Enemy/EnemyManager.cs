@@ -8,17 +8,23 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField] private List<Pool> enemyProjectilePools = new();
 
     [Space]
-    [SerializeField] private Vector3 spawnPosTest;
+    [SerializeField] private float spawnPosX;
+    [SerializeField] private float spawnPosY;
+    [SerializeField] private float spawnPointMultipleValue;
+
+    [Space]
     [SerializeField] private float spawnDelay;
+    [SerializeField] private float minSpawnDelay;
+    [SerializeField] private float maxSpawnDelay;
 
     private List<EnemyController> aliveEnemies = new();
-    private float baseSpawnDelay;
+    private Vector3 spawnPos;
 
     protected override void Awake()
     {
         base.Awake();
 
-        baseSpawnDelay = spawnDelay;
+        spawnPos.x = spawnPosX;
 
         for (int i = 0; i < enemyPools.Count; i++)
         {
@@ -48,26 +54,23 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private void SpawnEnemy()
     {
+        spawnPos.y = Random.Range(-spawnPosY, spawnPosY);
+
         Pool enemyPool = enemyPools[Random.Range(0, enemyPools.Count)];
-        EnemyController enemy = ObjectPool.Instance.GetObject<EnemyController>(enemyPool.PoolName, spawnPosTest);
+        EnemyController enemy = ObjectPool.Instance.GetObject<EnemyController>(enemyPool.PoolName, spawnPos);
 
         if (enemy.IsPointMovement())
-            enemy.Init(spawnPosTest + Vector3.left * 3f);
+            enemy.Init(spawnPos + (Vector3.left * spawnPointMultipleValue));
         else
-            enemy.Init(spawnPosTest);
+            enemy.Init(spawnPos);
 
         aliveEnemies.Add(enemy);
 
-        spawnDelay = baseSpawnDelay;
+        spawnDelay = Random.Range(minSpawnDelay, maxSpawnDelay);
     }
 
-    private void SpawnBoss()
+    public void ReturnEnemy(EnemyController enemy)
     {
-        Pool enemyPool = enemyPools[Random.Range(0, enemyPools.Count)];
-        EnemyController enemy = ObjectPool.Instance.GetObject<EnemyController>(enemyPool.PoolName, spawnPosTest);
-
-        enemy.Init(spawnPosTest + Vector3.left * 5f);
-
-        aliveEnemies.Add(enemy);
+        aliveEnemies.Remove(enemy);
     }
 }

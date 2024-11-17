@@ -373,8 +373,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 90129bc49e3c8dc42b15430bd79a0498, type: 2}
   enemyProjectilePools:
   - {fileID: 11400000, guid: 4e423fef1f830a34da3461c9f6b8401d, type: 2}
-  spawnPosTest: {x: 10, y: -0.02, z: 0}
-  spawnDelay: 3
+  spawnPosX: 11
+  spawnPosY: 3.5
+  spawnPointMultipleValue: 4
+  spawnDelay: 1
+  minSpawnDelay: 2
+  maxSpawnDelay: 5
 --- !u!4 &711254670
 Transform:
   m_ObjectHideFlags: 0

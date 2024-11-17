@@ -19,7 +19,7 @@ public abstract class EnemyController : MonoBehaviour
     protected virtual void Awake()
     {
         statController.Init();
-        statController.OnUnitDied += ReturnPool;
+        statController.OnUnitDied += StatController_OnUnitDied;
 
         for (int i = 0; i < shootDatas.Count; i++)
         {
@@ -40,6 +40,7 @@ public abstract class EnemyController : MonoBehaviour
 
     public virtual void StatController_OnUnitDied()
     {
+        EnemyManager.Instance.ReturnEnemy(this);
         ReturnPool();
     }
 
