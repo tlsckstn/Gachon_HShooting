@@ -10,6 +10,7 @@ public class EnemyType5 : EnemyController
     {
         base.Init(targetPos);
 
+        isGoal = false;
         this.targetPos = targetPos;
         (movement as PointMovement).OnPointGoal += PointMovement_OnPointGoal;
     }

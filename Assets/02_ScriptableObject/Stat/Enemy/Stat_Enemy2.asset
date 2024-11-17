@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stat_Enemy2
   m_EditorClassIdentifier: 
   hpStat:
-    baseValue: 40
+    baseValue: 70
     minValue: 0
     maxValue: 1000
   damageStat:

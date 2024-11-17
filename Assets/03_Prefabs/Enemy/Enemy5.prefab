@@ -42,12 +42,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2911608093672357368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b5cef422a6e2a44a0d71598cae3c84, type: 3}
+  m_Script: {fileID: 11500000, guid: 731633889558e7541bf59e9e9ad25ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 3
   proejectilePool: {fileID: 11400000, guid: 4e423fef1f830a34da3461c9f6b8401d, type: 2}
-  shootCount: 5
 --- !u!1 &4954019168619368877
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  isRotate: 0
   rotator: {fileID: 0}
 --- !u!114 &1212040370025637693
 MonoBehaviour:
@@ -197,7 +195,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.14094818, y: 0.05748844}
+  m_Offset: {x: 0.037673235, y: 0.13646352}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -207,7 +205,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.040431, y: 3.8744311}
+  m_Size: {x: 2.3309727, y: 1.7481754}
   m_EdgeRadius: 0
 --- !u!50 &2944181615886891517
 Rigidbody2D:

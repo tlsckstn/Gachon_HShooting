@@ -370,15 +370,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPools:
+  - {fileID: 11400000, guid: 0d6c751f907a0744498dd038541e3fe5, type: 2}
+  - {fileID: 11400000, guid: f74c23aef2d2a2b46b2df38dfedf44c3, type: 2}
+  - {fileID: 11400000, guid: 56701281a5b6c7d4d874573856900233, type: 2}
+  - {fileID: 11400000, guid: 4a0f8b9387cc5a646809f5c866e5c294, type: 2}
   - {fileID: 11400000, guid: 90129bc49e3c8dc42b15430bd79a0498, type: 2}
   enemyProjectilePools:
+  - {fileID: 11400000, guid: 4a6a57812bb946249a9fe3ff53760331, type: 2}
+  - {fileID: 11400000, guid: d11fa287e2b94364e8b70d3645765f6e, type: 2}
+  - {fileID: 11400000, guid: f43d2c80cd952a14e9f774cda57f9833, type: 2}
   - {fileID: 11400000, guid: 4e423fef1f830a34da3461c9f6b8401d, type: 2}
   spawnPosX: 11
   spawnPosY: 3.5
   spawnPointMultipleValue: 4
   spawnDelay: 1
-  minSpawnDelay: 2
-  maxSpawnDelay: 5
+  minSpawnDelay: 1
+  maxSpawnDelay: 4
 --- !u!4 &711254670
 Transform:
   m_ObjectHideFlags: 0
@@ -599,7 +606,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5bdb34659a88e674686714a1b2623917, type: 2}
   - {fileID: 11400000, guid: cfaee475e1a44ed4b9295ec4e49117ff, type: 2}
   - {fileID: 11400000, guid: 7ad8f8b07c4946140a614b956e3d51b0, type: 2}
-  stage: 20
+  stage: 0
 --- !u!1 &930493092
 GameObject:
   m_ObjectHideFlags: 0

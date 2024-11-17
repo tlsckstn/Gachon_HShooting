@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc336bec84a9c147ae03d1b59702225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 3
+  shootDelay: 2
   proejectilePool: {fileID: 11400000, guid: f43d2c80cd952a14e9f774cda57f9833, type: 2}
 --- !u!114 &3994846211672949101
 MonoBehaviour:
@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  isRotate: 0
   rotator: {fileID: 0}
   rigid: {fileID: 3990558068426071928}
 --- !u!114 &7796198256932888093

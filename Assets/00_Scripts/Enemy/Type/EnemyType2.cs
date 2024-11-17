@@ -19,6 +19,7 @@ public class EnemyType2 : EnemyController
     {
         base.Init(targetPos);
 
+        isGoal = false;
         this.targetPos = targetPos;
         isGoal = false;
     }
