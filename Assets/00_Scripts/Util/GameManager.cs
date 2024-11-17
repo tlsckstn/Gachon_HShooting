@@ -9,21 +9,33 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private List<GameObject> playerPrefabs;
     [SerializeField] private Vector3 spawnPos;
-    private int selectPlayerIndex = 0;
 
-    protected override void Awake()
+    private int selectPlayerIndex = -1;
+    private bool isFirst = true;
+
+    private void Start()
     {
-        base.Awake();
+        if (isFirst)
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            PlayerController.OnPlayerDied += PlayerController_OnPlayerDied;
+            isFirst = false;
+        }
+    }
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
+    private void PlayerController_OnPlayerDied()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
     {
-        if(scene.buildIndex == 1)
+        // 두 번째로 StageScene에 진입하는 순간 알 수 없는 이유로 GameManager가 생성되며 selectPlayerIndex의 기본값이었던(현재는 -1) 0번째 플레이어 소환
+        // 이벤트를 등록하는 함수를 Awake에서 Start로 옮기는 것으로 해결(DestroyImmidiate 함수가 제대로 작동하지 못한듯?)
+        if (scene.buildIndex == 1)
         {
-            Debug.Log(selectPlayerIndex);
-            Instantiate(playerPrefabs[selectPlayerIndex], spawnPos, Quaternion.identity);
+            if(selectPlayerIndex != -1) 
+                Instantiate(playerPrefabs[selectPlayerIndex], spawnPos, Quaternion.identity);
         }
     }
 

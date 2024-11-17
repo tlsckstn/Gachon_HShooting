@@ -19,8 +19,18 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if(IsDontDestroy)
-            DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this as T;
+            if (IsDontDestroy)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+        }
+        else
+        {
+            DestroyImmediate(gameObject);
+        }
     }
 
     protected virtual void OnApplicationQuit() => isQuitting = true;

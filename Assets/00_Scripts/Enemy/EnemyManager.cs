@@ -46,7 +46,6 @@ public class EnemyManager : Singleton<EnemyManager>
     public void SetStageData(StageData data)
     {
         currentStageData = data;
-        Debug.Log(data.AppliedStage);
         spawnCount = currentStageData.SpawnCount;
         isReadyStage = true;
     }
