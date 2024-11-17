@@ -11,11 +11,6 @@ public class EnemyShooter : MultiShooter
         ShootTfs = shootTfs;
     }
 
-    public override void Init(float damage)
-    {
-        base.Init(damage);
-    }
-
     public override void Shoot(Vector3 dir)
     {
         for (int i = 0; i < ShootTfs.Count; i++)
