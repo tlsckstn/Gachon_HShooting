@@ -21,9 +21,6 @@ public class StatController : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         Stats.TakeDamage(damage);
-        Debug.Log(Stats.HPStat.BaseValue);
-        Debug.Log(Stats.HPStat.MinValue);
-        Debug.Log(Stats.HPStat.IsMinValue());
         if(Stats.HPStat.IsMinValue())
         {
             Die();

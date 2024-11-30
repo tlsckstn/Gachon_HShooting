@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class StageManager : Singleton<StageManager>
 {
+    private const string STAGE_TEXT = "Stage ";
+
     [SerializeField] private List<StageData> datas;
     [SerializeField] private int stage;
     [SerializeField] private TMP_Text stageText;
@@ -25,7 +27,7 @@ public class StageManager : Singleton<StageManager>
         currentStageData = CalculateStageData();
         EnemyManager.Instance.SetStageData(currentStageData);
 
-        stageText.text = $"Stage {stage}";
+        stageText.text = STAGE_TEXT + stage;
     }
 
     private StageData CalculateStageData() => datas.Last(x => x.AppliedStage <= stage);
