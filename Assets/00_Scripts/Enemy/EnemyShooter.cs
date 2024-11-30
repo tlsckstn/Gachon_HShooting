@@ -16,7 +16,7 @@ public class EnemyShooter : MultiShooter
         for (int i = 0; i < ShootTfs.Count; i++)
         {
             ProjectileController projectile = ObjectPool.Instance.GetObject<ProjectileController>(proejectilePool.PoolName, ShootTfs[i].position);
-            projectile.Init(this);
+            projectile.Init(damage);
             projectile.Movement.Move(dir);
 
             projectiles.Add(projectile);

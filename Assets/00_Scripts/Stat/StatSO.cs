@@ -8,13 +8,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "StatSO", menuName = "Scriptable Objects/StatSO")]
 public class StatSO : ScriptableObject, ICloneable
 {
-    #region Events
-    public delegate void StatChangeHandler(Stat stat);
-    public event StatChangeHandler OnHPStatChanged;
-    public event StatChangeHandler OnDamageStatChanged;
-    public event StatChangeHandler OnSpeedStatChanged;
-    #endregion
-
     [SerializeField] private Stat hpStat;
     [SerializeField] private Stat damageStat;
     [SerializeField] private Stat speedStat;
@@ -27,10 +20,6 @@ public class StatSO : ScriptableObject, ICloneable
 
     public void Init()
     {
-        hpStat.OnVaueChanged += () => OnHPStatChanged?.Invoke(hpStat);
-        damageStat.OnVaueChanged += () => OnDamageStatChanged?.Invoke(damageStat);
-        speedStat.OnVaueChanged += () => OnSpeedStatChanged?.Invoke(speedStat);
-
         hpStat.Setup();
         damageStat.Setup();
         speedStat.Setup();

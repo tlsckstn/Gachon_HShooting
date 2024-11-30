@@ -13,7 +13,7 @@ public class PlayerShooter : SoloShooter
     public override void Shoot(Vector3 dir)
     {
         ProjectileController projectile = ObjectPool.Instance.GetObject<ProjectileController>(proejectilePool.PoolName, shootTf.position);
-        projectile.Init(this);
+        projectile.Init(damage);
         projectile.Movement.Move(dir);
     }
 }

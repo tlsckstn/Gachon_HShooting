@@ -18,15 +18,6 @@ public class StatController : MonoBehaviour, IDamageable
     public float GetDamageValue() => Stats.DamageStat.Value;
     public float GetSpeedValue() => Stats.SpeedStat.Value;
 
-    public void TakeDamage(float damage)
-    {
-        Stats.TakeDamage(damage);
-        if(Stats.HPStat.IsMinValue())
-        {
-            Die();
-        }
-    }
-
     public void Init()
     {
         if(statData == null)
@@ -53,6 +44,15 @@ public class StatController : MonoBehaviour, IDamageable
     {
         Stats.HPStat.BaseValue = baseHp;
         Stats.DamageStat.RemoveAllModifiers();
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Stats.TakeDamage(damage);
+        if (Stats.HPStat.IsMinValue())
+        {
+            Die();
+        }
     }
 
     public void Die()

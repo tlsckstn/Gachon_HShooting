@@ -2,25 +2,28 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    private static readonly string TAG_WALL = "Wall";
+
     [SerializeField] private Movement movement;
 
-    public Movement Movement => movement;
-    public Shooter Owner { get; private set; }  
+    private float damage;
 
-    public void Init(Shooter owner)
+    public Movement Movement => movement;
+
+    public void Init(float damage)
     {
-        Owner = owner;
+        this.damage = damage;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent<IDamageable>(out IDamageable damageable))
         {
-            damageable.TakeDamage(Owner.Damage);
+            damageable.TakeDamage(damage);
             ReturnPool();
         }
 
-        if (collision.CompareTag("Wall"))
+        if (collision.CompareTag(TAG_WALL))
         {
             ReturnPool();
         }
