@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 슈터의 기본 클래스
+/// </summary>
 public abstract class Shooter : MonoBehaviour, IShootable
 {
     [SerializeField] protected float shootDelay;

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 지속적으로 호출해 서서히 바라보기
+/// </summary>
 public class SpeedRotate : Rotator
 {
     [SerializeField] protected float rotateSpeed;

@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Enemy들을 관리하는 EnemyManager 스크립트
+/// Enemy들의 생성 데이터를 가진 Pool들과 Enemy들의 Proejctile 생성 데이터를 가진 Pool들을 List 형태로 가지고 있음
+/// aliveEnemies List에 현재 살아있는 Enemy들이 담기며 Enemy가 죽을 시 저 리스트에서 제외됨
+/// Stage에 할당된 모든 Enemy가 죽었을 때 다음 스테이지로 넘어감
+/// </summary>
 public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] private List<Pool> enemyPools = new();

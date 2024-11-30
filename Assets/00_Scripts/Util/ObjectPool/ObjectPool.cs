@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Pool ScriptableObject를 활용해 오브젝트 풀링을 하는 방식
+/// </summary>
 public class ObjectPool : Singleton<ObjectPool>
 {
     private Dictionary<Pool, Queue<GameObject>> poolQueueDict = new();
@@ -24,6 +27,13 @@ public class ObjectPool : Singleton<ObjectPool>
         CreateObject(pool);
     }
 
+    /// <summary>
+    /// 오브젝트의 이름 or Pool의 PoolName 변수 값이 넘어오고 그 값으로 검사
+    /// </summary>
+    /// <param name="poolName"></param>
+    /// <param name="position"></param>
+    /// <param name="parent"></param>
+    /// <returns></returns>
     public GameObject GetObject(string poolName, Vector3 position, Transform parent = null)
     {
         Pool pool = GetPoolByName(poolName);
@@ -47,7 +57,15 @@ public class ObjectPool : Singleton<ObjectPool>
         return go;
     }
 
-    public T GetObject<T>(string poolName, Vector3 position, Transform parent = null)
+    /// <summary>
+    /// 원하는 컴포넌트 리턴
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="poolName"></param>
+    /// <param name="position"></param>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    public T GetObject<T>(string poolName, Vector3 position, Transform parent = null) where T : MonoBehaviour
         => GetObject(poolName, position, parent).GetComponent<T>();
 
     public void ReturnObject(GameObject go)

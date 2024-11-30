@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 모든 
+/// </summary>
 public class InputManager : Singleton<InputManager>
 {
     public delegate void InputHandler(InputData data);
@@ -47,6 +50,10 @@ public class InputManager : Singleton<InputManager>
     }
 }
 
+/// <summary>
+/// 입력 데이터들
+/// Mathf.Approximately 함수는 근사값 비교 함수로 float에서 가끔 발생하는 오류를 막기 위해 사용
+/// </summary>
 public struct InputData
 {
     public Vector3 inputDir;

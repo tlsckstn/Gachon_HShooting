@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 유닛(플레이어, 적)들의 스탯을 관리
+/// 데미지를 받고 스탯들을 리턴하는 것이 역할
+/// </summary>
 public class StatController : MonoBehaviour, IDamageable
 {
     #region

@@ -14,7 +14,7 @@ public class EnemyType1 : EnemyController
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Wall"))
+        if(collision.CompareTag(ProjectileController.TAG_WALL))
         {
             transform.position = respawnPos;
         }

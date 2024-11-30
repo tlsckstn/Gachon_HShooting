@@ -1,8 +1,11 @@
 using UnityEngine;
 
+/// <summary>
+/// ÃÑ¾Ë °ü¸®
+/// </summary>
 public class ProjectileController : MonoBehaviour
 {
-    private static readonly string TAG_WALL = "Wall";
+    public static readonly string TAG_WALL = "Wall";
 
     [SerializeField] private Movement movement;
 

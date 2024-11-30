@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 왼쪽으로 움직이면서 왼쪽에 존재하는 배경이 일정 값을 넘어서면 왼쪽에 존재하는 배경을 오른쪽으로 이동
+/// </summary>
 public class BackgroundController : MonoBehaviour
 {
     [SerializeField] private float speed;
@@ -14,7 +17,6 @@ public class BackgroundController : MonoBehaviour
     {
         return leftImage.position.x > rightImage.position.x ? rightImage : leftImage;
     }
-
 
     private void Update()
     {

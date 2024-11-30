@@ -30,5 +30,9 @@ public class StageManager : Singleton<StageManager>
         stageText.text = STAGE_TEXT + stage;
     }
 
+    /// <summary>
+    /// StageData를 가져오는데 데이터들 중 AppliedStage 값이 현재 스테이지 값보다 가장 작은 것들 중 가장 뒤에 있는(가장 가까운 데이터값) 값을 가져옴
+    /// </summary>
+    /// <returns></returns>
     private StageData CalculateStageData() => datas.Last(x => x.AppliedStage <= stage);
 }

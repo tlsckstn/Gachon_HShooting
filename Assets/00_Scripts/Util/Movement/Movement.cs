@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 기본적인 Movement 클래스
+/// </summary>
 public abstract class Movement : MonoBehaviour, IMoveable
 {
     [SerializeField] protected float speed;

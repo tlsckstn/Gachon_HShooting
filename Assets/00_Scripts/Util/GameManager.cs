@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// LobbyScene과 GameScene의 중간다리 역할
+/// 어떤 플레이어를 선택했는지 전달하고 플레이어가 죽으면 LobbyScene으로 돌아가는 역할
+/// </summary>
 public class GameManager : Singleton<GameManager>
 {
     protected override bool IsDontDestroy => true;

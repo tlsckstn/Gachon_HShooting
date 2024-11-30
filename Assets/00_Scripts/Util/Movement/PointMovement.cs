@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// 특정 위치로 이동하는 클래스
+/// 도착 시 OnPointGoal 이벤트 실행
+/// </summary>
 public class PointMovement : Movement
 {
     public delegate void PointGoalHandler();

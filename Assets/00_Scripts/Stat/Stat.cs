@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// HP, Damage, Speed 스탯들
+/// baseValue와 Value를 나눈 이유는 버프(Modifier)가 더해질때 곱하기 연산이 들어가면 값이 비정상적으로 커지기 때문
+/// 따라서 baseValue는 기본값, Value는 버프를 합친 최종 값
+/// </summary>
 [System.Serializable]
 public class Stat
 {

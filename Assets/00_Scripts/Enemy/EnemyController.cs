@@ -1,6 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Enemy들이 상속받을 기본 Controller 스크립트
+/// 다양한 공격을 구사하기 때문에 Shooter 대신 ShootData를 List 형태로 가지고 있음
+/// 유니티의 Update 함수 대신 EnemyManager에서 OnUdpate(Time.deltaTime) 방식으로 호출
+/// </summary>
 public abstract class EnemyController : MonoBehaviour
 {
     [SerializeField] protected Movement movement;

@@ -1,6 +1,12 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Movement, Shooter, StatController를 관리하며 중간다리 역할을 한다
+/// InputManager에서 넘어온 입력을 바탕으로 움직이는 명령을 Movement에게 내림
+/// InputManager에서 넘어온 입력을 바탕으로 총알을 발사하는 명령을 Shooter에게 내림
+/// 대부분의 이벤트 등록 함수들은 클래스이름_이벤트이름
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     #region Events
