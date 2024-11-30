@@ -608,6 +608,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ad8f8b07c4946140a614b956e3d51b0, type: 2}
   - {fileID: 11400000, guid: 55e92085e1f8ba149afa0e534e4a08a9, type: 2}
   stage: 0
+  stageText: {fileID: 1051023880}
 --- !u!1 &930493092
 GameObject:
   m_ObjectHideFlags: 0
