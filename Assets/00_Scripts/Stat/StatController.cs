@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +9,9 @@ using UnityEngine;
 public class StatController : MonoBehaviour, IDamageable
 {
     #region
-    public delegate void UnitDieHandler();
-    public event UnitDieHandler OnUnitDied;
+    public delegate void UnitDamageHandler(Stat hpStat);
+    public event UnitDamageHandler OnUnitHPStatChanged;
+    public event UnitDamageHandler OnUnitDied;
     #endregion
 
     [SerializeField] private StatSO statData;
@@ -32,7 +34,14 @@ public class StatController : MonoBehaviour, IDamageable
 
         Stats = statData.Clone() as StatSO;
         Stats.Init();
+
+        Stats.HPStat.OnVaueChanged += HPStat_OnValueChanged;
         baseHp = GetBaseHPValue();
+    }
+
+    private void HPStat_OnValueChanged()
+    {
+        OnUnitHPStatChanged?.Invoke(Stats.HPStat);
     }
 
     public void TryIncreaseStat(float hpAmount, Modifier modifier)
@@ -61,7 +70,7 @@ public class StatController : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        OnUnitDied?.Invoke();
+        OnUnitDied?.Invoke(Stats.HPStat);
         gameObject.SetActive(false);
     }
 

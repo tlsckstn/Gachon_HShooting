@@ -27,7 +27,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private void PlayerController_OnPlayerDied()
+    private void PlayerController_OnPlayerDied(Stat hpStat)
     {
         SceneManager.LoadScene(0);
     }

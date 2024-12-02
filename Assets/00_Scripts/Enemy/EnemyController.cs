@@ -43,7 +43,7 @@ public abstract class EnemyController : MonoBehaviour
     {
     }
 
-    public virtual void StatController_OnUnitDied()
+    public virtual void StatController_OnUnitDied(Stat hpStat)
     {
         EnemyManager.Instance.ReturnEnemy(this);
         ReturnPool();
