@@ -70,7 +70,7 @@ public class Stat
     {
         if(HasModfier(modifier))
         {
-            Debug.Log("이미 존재하는 Modifier입니다. " +  modifier.Name);
+            Debug.Log("이미 존재하는 Modifier입니다.");
             return;
         }
 
@@ -90,7 +90,7 @@ public class Stat
     {
         if (!HasModfier(modifier))
         {
-            Debug.Log("존재하지 않는 Modifier입니다. " + modifier.Name);
+            Debug.Log("존재하지 않는 Modifier입니다. ");
             return;
         }
 

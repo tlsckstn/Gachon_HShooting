@@ -12,8 +12,7 @@ public class SpeedRotate : Rotator
     public override void Rotate(Vector3 dir)
     {
         dir = (dir - transform.position).normalized;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        rotateVec.z = angle + additionalAngle;
+        rotateVec.z = GetAngle(dir) + additionalAngle;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(rotateVec), rotateSpeed * Time.deltaTime);
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stat_Player5
   m_EditorClassIdentifier: 
   hpStat:
-    baseValue: 75
+    baseValue: 85
     minValue: 0
     maxValue: 100
   damageStat:

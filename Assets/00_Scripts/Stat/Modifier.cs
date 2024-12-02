@@ -6,12 +6,10 @@ using UnityEngine;
 /// HP 회복의 경우 Modifier를 사용하지 않고 BaseValue를 변경
 /// </summary>
 [System.Serializable]
-public class Modifier : IEquatable<Modifier>, IName
+public class Modifier : IEquatable<Modifier>
 {
     [SerializeField] private float value;
     [SerializeField] private ModifierType type;
-
-    [field: SerializeField] public string Name { get; set; }
 
     public float Value => value;
     public ModifierType Type => type;
@@ -23,6 +21,5 @@ public class Modifier : IEquatable<Modifier>, IName
 
     public bool Equals(Modifier other) =>
         type == other.type &&
-        Mathf.Approximately(value, other.value) &&
-        Name.Equals(other.Name);
+        Mathf.Approximately(value, other.value);
 }

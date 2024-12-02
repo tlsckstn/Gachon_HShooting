@@ -12,11 +12,6 @@ public interface IDamageable
     public void Die();
 }
 
-public interface IName
-{
-    public string Name { get; set; }
-}
-
 public interface IShootable
 {
     public void Init(float damage);
