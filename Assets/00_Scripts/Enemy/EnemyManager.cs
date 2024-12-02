@@ -71,7 +71,7 @@ public class EnemyManager : Singleton<EnemyManager>
         }
 
         spawnDelay -= deltaTime;
-        if(spawnDelay <= 0)
+        if(spawnDelay <= 0 && spawnCount > 0)
         {
             SpawnEnemy();
         }
