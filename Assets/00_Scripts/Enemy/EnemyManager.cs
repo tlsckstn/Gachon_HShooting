@@ -61,7 +61,8 @@ public class EnemyManager : Singleton<EnemyManager>
         if (!isReadyStage)
             return;
 
-        CheckForStage();
+        if (IsStageClear)
+            SetNextStage();
 
         float deltaTime = Time.deltaTime;
         for (int i = 0; i < aliveEnemies.Count; i++)
@@ -76,11 +77,8 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
-    private void CheckForStage()
+    private void SetNextStage()
     {
-        if (!IsStageClear)
-            return;
-
         isReadyStage = false;
         StageManager.Instance.SetNextStage();
     }

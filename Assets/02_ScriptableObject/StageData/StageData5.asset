@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8876f2e13fbbe4ea7d1cdbcf76344c, type: 3}
   m_Name: StageData5
   m_EditorClassIdentifier: 
-  spawnCount: 30
+  spawnCount: 20
   appliedStage: 40
   additionalHp: 80
   additionalDamage:
