@@ -2,9 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// 플레이어 종류에 따라 Stat을 UI로 표시
-/// </summary>
 public class LobbyPlayerUI : MonoBehaviour
 {
     [SerializeField] private StatSO stat;

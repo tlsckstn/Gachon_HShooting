@@ -3,21 +3,16 @@ using UnityEngine;
 
 public static class Utilities
 {
-    private static Dictionary<float, WaitForSeconds> waitDict = new();
-    public static WaitForSeconds GetWait(float key)
+    private static PlayerController playerController;
+    public static PlayerController GetPlayerController()
     {
-        if(!waitDict.ContainsKey(key))
-            waitDict.Add(key, new WaitForSeconds(key));
+        if (playerController == null)
+            playerController = GameObject.FindAnyObjectByType<PlayerController>();
 
-        return waitDict[key];
+        return playerController;
     }
-
-    private static Transform playerTf;
     public static Vector3 GetPlayerPos()
     {
-        if (playerTf == null)
-            playerTf = GameObject.FindAnyObjectByType<PlayerController>().transform;
-
-        return playerTf.position;
+        return GetPlayerController().transform.position;
     }
 }
