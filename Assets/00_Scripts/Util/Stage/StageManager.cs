@@ -21,7 +21,7 @@ public class StageManager : Singleton<StageManager>
         SetNextStage();
     }
 
-    internal void SetNextStage()
+    public void SetNextStage()
     {
         stage++;
         currentStageData = CalculateStageData();
