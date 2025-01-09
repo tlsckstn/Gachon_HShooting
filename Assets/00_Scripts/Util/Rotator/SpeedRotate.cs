@@ -13,6 +13,8 @@ public class SpeedRotate : Rotator
     {
         dir = (dir - transform.position).normalized;
         rotateVec.z = GetAngle(dir) + additionalAngle;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(rotateVec), rotateSpeed * Time.deltaTime);
+        transform.rotation = 
+            Quaternion.RotateTowards(transform.rotation, 
+            Quaternion.Euler(rotateVec), rotateSpeed * Time.deltaTime);
     }
 }

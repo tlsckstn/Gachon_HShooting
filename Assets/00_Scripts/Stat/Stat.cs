@@ -39,7 +39,6 @@ public class Stat
     public float MaxValue => maxValue;
 
     private float currentValue;
-
     public float Value
     {
         get

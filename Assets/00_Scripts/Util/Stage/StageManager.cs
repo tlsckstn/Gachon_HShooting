@@ -37,5 +37,6 @@ public class StageManager : Singleton<StageManager>
     /// 10~19: 2¹øÂ°
     /// </summary>
     /// <returns></returns>
-    private StageData CalculateStageData() => datas.Last(x => x.AppliedStage <= stage);
+    private StageData CalculateStageData() 
+        => datas.Last(x => x.AppliedStage <= stage);
 }
